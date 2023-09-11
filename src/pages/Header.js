@@ -12,6 +12,7 @@ const Header = () => {
       <div className={classes.nav__buttons}>
           <Link to={"/portfolio"} className={classes.button}>Projects</Link>
           <Link to={"/skills"} className={classes.button}>Skills</Link>
+          <Link to={"/experience"} className={classes.button}>Work Experience</Link>
           <Link to={"/aboutme"} className={classes.button}>About Me</Link>
       </div>
       <img src={menuImage} alt="Menu Logo"className={classes.nav__menu}/>

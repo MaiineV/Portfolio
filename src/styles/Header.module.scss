@@ -31,9 +31,10 @@ body{
     display: none;
 
     @media (min-width: $breakpoint-md) {
-      flex: 3;
+      flex: 4;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 10%;
     }
   }
 
