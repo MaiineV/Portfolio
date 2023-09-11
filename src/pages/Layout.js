@@ -6,6 +6,7 @@ import Portfolio from "./Portfolio";
 import Skills from "./Skills";
 import AboutMe from "./AboutMe";
 import WorkExperience from "./WorkExperience";
+import Footer from "./Footer";
 
 const Layout = () => {
   return (
@@ -18,6 +19,7 @@ const Layout = () => {
           <Route path="/aboutme" element={<AboutMe />} exact />
           <Route path="/experience" element={<WorkExperience />} exact />
         </Routes>
+        <Footer />
     </div>
   );
 };
