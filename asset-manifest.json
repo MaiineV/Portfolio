@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Ignacio_Martinez_Portfolio/static/css/main.7e3873d4.css",
+    "main.js": "/Ignacio_Martinez_Portfolio/static/js/main.7b153259.js",
+    "static/media/GitHub.png": "/Ignacio_Martinez_Portfolio/static/media/GitHub.282703f364da5ccec01a.png",
+    "static/media/Linkedin.png": "/Ignacio_Martinez_Portfolio/static/media/Linkedin.3f338ffc60b98989319d.png",
+    "static/media/image-portfolio.jpg": "/Ignacio_Martinez_Portfolio/static/media/image-portfolio.050cb2e83d58f393d304.jpg",
+    "static/media/menu-icon.png": "/Ignacio_Martinez_Portfolio/static/media/menu-icon.3c31b454a3a86279575b.png",
+    "index.html": "/Ignacio_Martinez_Portfolio/index.html",
+    "main.7e3873d4.css.map": "/Ignacio_Martinez_Portfolio/static/css/main.7e3873d4.css.map",
+    "main.7b153259.js.map": "/Ignacio_Martinez_Portfolio/static/js/main.7b153259.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e3873d4.css",
+    "static/js/main.7b153259.js"
+  ]
+}
