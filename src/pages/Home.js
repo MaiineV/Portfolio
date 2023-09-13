@@ -22,7 +22,7 @@ const Home = () => {
       </div>
       <div className={classes.home__categories}>
         <div>Pages:</div>
-        <Link className={classes.home__categories__buttons} to={"/portfolio"}>Portfolio</Link>
+        <Link className={classes.home__categories__buttons} to={"/projects"}>Portfolio</Link>
         <Link className={classes.home__categories__buttons} to={"/skills"}>Skills</Link>
         <Link className={classes.home__categories__buttons} to={"/experience"}>Work Experience</Link>
         <Link className={classes.home__categories__buttons} to={"/aboutme"}>About Me</Link>
