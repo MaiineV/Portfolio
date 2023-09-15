@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.ed99d45b.css",
-    "main.js": "/Portfolio/static/js/main.5a4848c7.js",
+    "main.css": "/Portfolio/static/css/main.33fdbc9f.css",
+    "main.js": "/Portfolio/static/js/main.01f6947d.js",
+    "static/media/AIAOE.rar": "/Portfolio/static/media/AIAOE.1c9ac9332e8d624db819.rar",
+    "static/media/robotpalooza_image.jpg": "/Portfolio/static/media/robotpalooza_image.43379fd92e7b90f2eab5.jpg",
+    "static/media/aoe_image.png": "/Portfolio/static/media/aoe_image.926f499d21a1ca03e3d6.png",
     "static/media/GitHub.png": "/Portfolio/static/media/GitHub.282703f364da5ccec01a.png",
     "static/media/Linkedin.png": "/Portfolio/static/media/Linkedin.3f338ffc60b98989319d.png",
     "static/media/image-portfolio.jpg": "/Portfolio/static/media/image-portfolio.050cb2e83d58f393d304.jpg",
     "static/media/menu-icon.png": "/Portfolio/static/media/menu-icon.3c31b454a3a86279575b.png",
     "index.html": "/Portfolio/index.html",
-    "main.ed99d45b.css.map": "/Portfolio/static/css/main.ed99d45b.css.map",
-    "main.5a4848c7.js.map": "/Portfolio/static/js/main.5a4848c7.js.map"
+    "main.33fdbc9f.css.map": "/Portfolio/static/css/main.33fdbc9f.css.map",
+    "main.01f6947d.js.map": "/Portfolio/static/js/main.01f6947d.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed99d45b.css",
-    "static/js/main.5a4848c7.js"
+    "static/css/main.33fdbc9f.css",
+    "static/js/main.01f6947d.js"
   ]
 }
