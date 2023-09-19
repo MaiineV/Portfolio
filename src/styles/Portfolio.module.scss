@@ -1,0 +1,75 @@
+@import "./variables.scss";
+
+body {
+  margin: 0;
+}
+
+.portfolio {
+  background: $bg;
+
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+
+  align-items: center;
+  justify-content: center;
+
+  font-family: $RobotSlab;
+  font-size: $large-font-size;
+
+  &__title{
+    font-size: calc($large-font-size * 1.5);
+    border: .2rem solid $primary;
+    color: $font;
+    border-radius: 10%;
+    padding:.3rem;
+    background: $secondary;
+  }
+
+  &__project {
+    display: flex;
+    background: $secondary;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 0.3rem solid $details;
+
+    & > img {
+      display: flex;
+      max-width: 200px;
+      min-width: 100px;
+
+      border-radius: 50%;
+      margin: .5rem;
+    }
+
+    &__info {
+      display: flex;
+      padding: 0.2rem;
+      color: $font;
+
+      text-justify: inter-word;
+      font-size: calc($large-font-size * 0.8);
+    }
+
+    &__seemore {
+      display: flex;
+      color: $font;
+      border: 0.3rem solid $primary;
+
+      text-decoration: none;
+
+      padding: .5rem;
+      margin: .5rem;
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+}
