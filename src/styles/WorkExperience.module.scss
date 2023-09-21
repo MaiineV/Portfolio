@@ -2,29 +2,39 @@
 
 body{
     margin: 0;
+    background: $bg;
 }
 
 .workExperiences{
     min-height: 100vh;
+
     font-family: $RobotSlab;
+    color: $font;
+
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    justify-content: center;
+
+    margin: 1rem;
+
     align-items: center;
-    padding: 2rem 1rem;
-    background: $bg;
 
     &__title{
         display: flex;
         font-size: xx-large;
         padding: .5rem;
-        margin: .5rem;
+        margin-top: 2rem;
+
+        border: solid $details .15rem;
+        background-color: $secondary;
     }
 
     &__itemList{
+        display: flex;
+        line-height: 26pt;
         border: 3px solid $details;
-        padding: .5rem;
-        margin: .5rem;
+        padding: 1rem;
+        margin: 1rem;
+        
     }
 }
