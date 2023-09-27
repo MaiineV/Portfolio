@@ -30,11 +30,11 @@ body{
     }
 
     &__itemList{
+        background: $secondary;
         display: flex;
         line-height: 26pt;
         border: 3px solid $details;
         padding: 1rem;
         margin: 1rem;
-        
     }
 }
