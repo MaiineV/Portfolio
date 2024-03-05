@@ -25,7 +25,7 @@ const Home = () => {
         <Link className={classes.home__categories__buttons} to={"/projects"}>Portfolio</Link>
         <Link className={classes.home__categories__buttons} to={"/skills"}>Skills</Link>
         <Link className={classes.home__categories__buttons} to={"/experience"}>Work Experience</Link>
-        <Link className={classes.home__categories__buttons} to={"/contactme"}>Contact Me</Link>
+        {/* <Link className={classes.home__categories__buttons} to={"/contactme"}>Contact Me</Link> */}
       </div>
     </div>
   )
