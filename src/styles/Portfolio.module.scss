@@ -58,9 +58,9 @@
     align-items: center;
   
     img {
-      max-height: 150px;
       width: 100%;
-      object-fit: cover;
+      height: auto;           // la altura se ajusta a la proporción de la imagen
+      object-fit: contain;    // “contain” ajusta la imagen dentro del cuadro sin recortar :contentReference[oaicite:2]{index=2}
       border-radius: 0.5rem;
       margin-bottom: auto;
     }
