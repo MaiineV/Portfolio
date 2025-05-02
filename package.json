@@ -1,5 +1,5 @@
 {
-  "homepage":"https://maiinev.github.io/Portfolio/",
+  "homepage": "https://maiinev.github.io/Portfolio/",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -40,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "sass": "^1.66.1"
   }
 }
