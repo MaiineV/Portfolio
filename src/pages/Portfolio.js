@@ -1,83 +1,92 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "../styles/Portfolio.module.scss";
 
 import robotpaloozaImage from "../images/robotpalooza_image.jpg";
-
 import unrealImage from "../images/Unreal.png";
-
-import aoeAI from "../projects/AIAOE.rar";
 import aoeImage from "../images/aoe_image.png";
+import aoeAI from "../projects/AIAOE.rar";
+
+const projects = [
+  {
+    title: "Robotpalooza",
+    shortDescription: "Frenetic FPS in Unity.",
+    fullDescription:
+      "Developed in Unity C#, showcased at EVA 2023. I worked on AI, player mechanics, and world events using SOLID principles.",
+    image: robotpaloozaImage,
+    links: [
+      { label: "Download Game!", url: "https://burntcones.itch.io/robotpalooza" },
+      { label: "See Project!", url: "https://github.com/TheSirYeti/ProjectFeverDream" },
+    ],
+  },
+  {
+    title: "Unreal Game",
+    shortDescription: "Shooter made in UE4.",
+    fullDescription:
+      "FPS made with Blueprints and C++. Covered core gameplay, logic and level scripting.",
+    image: unrealImage,
+    links: [
+      { label: "See Project!", url: "https://github.com/TheSirYeti/UE4_Project_VJM5AH" },
+    ],
+  },
+  {
+    title: "AI of Age of Empires",
+    shortDescription: "AI prototype for AoE.",
+    fullDescription:
+      "Applied Theta Star, obstacle avoidance, and state machines. Created AI agents with multiple decision layers.",
+    image: aoeImage,
+    links: [
+      { label: "Download Game!", url: aoeAI },
+      { label: "See Project!", url: "https://github.com/MaiineV/AOE-AI" },
+    ],
+  },
+];
 
 const Portfolio = () => {
+  const [flippedIndex, setFlippedIndex] = useState(null);
+
+  const handleFlip = (index) => {
+    setFlippedIndex((prev) => (prev === index ? null : index));
+  };
+
   return (
     <div className={classes.portfolio}>
-      <div className={classes.portfolio__title}>My Projects</div>
-
-      <div className={classes.portfolio__project}>
-        <img src={robotpaloozaImage} alt="Robotpalooza enemy" />
-        <div className={classes.portfolio__title}>Robotpaloza</div>
-        <div className={classes.portfolio__project__info}>
-          Robotpalooza is a frenetic first-person game, developed in Unity C# by
-          a team of 4 people. It has been in development for six months and was
-          selected to have a booth at EVA 2023, allowing us to showcase it to a
-          wider audience and receive more feedback. In this project, I was
-          responsible for programming, using design patterns and SOLID
-          principles. I worked on artificial intelligence, player mechanics, and
-          world events.
-        </div>
-        <a
-          className={classes.portfolio__project__seemore}
-          href="https://burntcones.itch.io/robotpalooza"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Download Game!
-        </a>
-        <a
-          className={classes.portfolio__project__seemore}
-          href="https://github.com/TheSirYeti/ProjectFeverDream"
-          target="_blank"
-          rel="noreferrer"
-        >
-          See Project!
-        </a>
-      </div>
-
-      <div className={classes.portfolio__project}>
-        <img src={unrealImage} alt="Unreal Game" />
-        <div className={classes.portfolio__title}>Unreal Game</div>
-        <div className={classes.portfolio__project__info}>
-          This is a first-person shooter game made in Unreal Engine 4, using
-          both Blueprints and C++. Applying various concepts from it.
-        </div>
-        <a
-          className={classes.portfolio__project__seemore}
-          href="https://github.com/TheSirYeti/UE4_Project_VJM5AH"
-          target="_blank"
-          rel="noreferrer"
-        >
-          See Project!
-        </a>
-      </div>
-
-      <div className={classes.portfolio__project}>
-        <img src={aoeImage} alt="Age Of Empires" />
-        <div className={classes.portfolio__title}>AI of Age of Empires</div>
-        <div className={classes.portfolio__project__info}>
-          It's a project in which designs for artificial intelligences are
-          applied, such as Theta Star, obstacle avoidance, and state machines.
-        </div>
-        <a className={classes.portfolio__project__seemore} href={aoeAI}>
-          Download Game!
-        </a>
-        <a
-          className={classes.portfolio__project__seemore}
-          href="https://github.com/MaiineV/AOE-AI"
-          target="_blank"
-          rel="noreferrer"
-        >
-          See Project!
-        </a>
+      <h2 className={classes.portfolio__title}>My Projects</h2>
+      <div className={classes.portfolio__grid}>
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className={`${classes.cardContainer} ${
+              flippedIndex === index ? classes.flipped : ""
+            }`}
+            onClick={() => handleFlip(index)}
+          >
+            <div className={classes.card}>
+              <div className={classes.front}>
+                <img src={project.image} alt={project.title} />
+                <h3>{project.title}</h3>
+                <p>{project.shortDescription}</p>
+              </div>
+              <div className={classes.back}>
+                <h3>{project.title}</h3>
+                <p>{project.fullDescription}</p>
+                <div className={classes.portfolio__card__buttons}>
+                  {project.links.map((link, i) => (
+                    <a
+                      key={i}
+                      href={link.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={classes.portfolio__button}
+                      onClick={(e) => e.stopPropagation()} // evita volver a girar al clickear link
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

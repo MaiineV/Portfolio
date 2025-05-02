@@ -20,7 +20,7 @@ body {
   &__logo {
     font-family: $LogoFont;
     font-size: $large-font-size;
-    color: $font;
+    color: #FCFCFC;
     text-decoration: none;
 
     &:hover {
@@ -103,15 +103,18 @@ body {
 }
 
 .button {
-  color: $font;
+  color: #FCFCFC;
   background: $secondary;
-  display: inline;
+  display: inline-block;
   padding: 0.2rem 0.5rem;
   border: 0.2rem solid $secondary;
   border-radius: 20% 0%;
   text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 
   &:hover {
-    border-color: $details;
+    transform: scale(1.05);
+    background-color: lighten($secondary, 5%);
+    // El borde se mantiene igual
   }
 }
