@@ -1,9 +1,8 @@
 @import "./variables.scss";
 
 @mixin titles($fontSizeMultiply: 1) {
-  font-family: $LogoFont;
+  font-family: $RobotSlab;
   font-size: calc($large-font-size * $fontSizeMultiply);
-  text-decoration: underline;
 }
 
 @mixin skillBar($width: 100%, $bg-color: #000) {
@@ -31,7 +30,7 @@ body {
 
   gap: 1rem;
 
-  color: $font;
+  color: #FCFCFC;
 
   @media (min-width: $breakpoint-md) {
     display: grid;
@@ -51,6 +50,8 @@ body {
   &__title {
     @include titles(2);
 
+    color: $font;
+
     @media (min-width: $breakpoint-md) {
       grid-column: 1 / 4;
       grid-row: 1;
@@ -67,13 +68,13 @@ body {
     flex-direction: column;
     gap: 1rem;
 
-    border: solid $primary 0.2rem;
+    border: solid $details 0.2rem;
     width: calc(100% - 1.2rem);
 
     align-items: center;
     justify-content: center;
 
-    background: $secondary;
+    background: $primary;
 
     font-family: $RobotSlab;
 
@@ -102,72 +103,72 @@ body {
     &__container {
       &100 {
         width: 100%;
-        background-color: #ddd;
+        background-color: $loadingBarBackground;
         & > div {
-          @include skillBar(100%, #000);
+          @include skillBar(100%, $loadingBarColor);
         }
       }
       &90 {
         width: 100%;
-        background-color: #ddd;
+        background-color: $loadingBarBackground;
         & > div {
-          @include skillBar(90%, #000);
+          @include skillBar(90%, $loadingBarColor);
         }
       }
       &80 {
         width: 100%;
-        background-color: #ddd;
+        background-color: $loadingBarBackground;
         & > div {
-          @include skillBar(80%, #000);
+          @include skillBar(80%, $loadingBarColor);
         }
       }
       &70 {
         width: 100%;
-        background-color: #ddd;
+        background-color: $loadingBarBackground;
         & > div {
-          @include skillBar(70%, #000);
+          @include skillBar(70%, $loadingBarColor);
         }
       }
       &60 {
         width: 100%;
-        background-color: #ddd;
+        background-color: $loadingBarBackground;
         & > div {
-          @include skillBar(60%, #000);
+          @include skillBar(60%, $loadingBarColor);
         }
       }
       &50 {
         width: 100%;
-        background-color: #ddd;
+        background-color: $loadingBarBackground;
         & > div {
-          @include skillBar(50%, #000);
+          @include skillBar(50%, $loadingBarColor);
         }
       }
       &40 {
         width: 100%;
-        background-color: #ddd;
+        background-color: $loadingBarBackground;
         & > div {
-          @include skillBar(40%, #000);
+          @include skillBar(40%, $loadingBarColor);
         }
       }
       &30 {
         width: 100%;
-        background-color: #ddd;
+        background-color: $loadingBarBackground;
         & > div {
-          @include skillBar(30%, #000);
+          @include skillBar(30%, $loadingBarColor);
         }
       }
       &20 {
         width: 100%;
-        background-color: #ddd;
+        background-color: $loadingBarBackground;
         & > div {
-          @include skillBar(20%, #000);
+          @include skillBar(20%, $loadingBarColor);
         }
       }
       &10 {
         width: 100%;
-        background-color: #ddd;
+        background-color: $loadingBarBackground;
         & > div {
-          @include skillBar(10%, #000);
+          @include skillBar(10%, $loadingBarColor);
         }
       }
     }
