@@ -7,28 +7,46 @@ const WorkExperience = () => {
       <div className={classes.workExperiences__title}>Work Experience</div>
       <div className={classes.workExperiences__jobsList}>
         <div className={classes.workExperiences__itemList}>
-          Position: Team Leader of Game Dev Area <br />
-          Company: Inside Dark Studio <br />
-          Work Time: 8 Month (March 2023 - Present)
+          <p className={classes.workExperiences__jobTitle}>
+            Position: Proffesor
+          </p>
+          <p>Company: Escuela Multimedial DaVinci</p>
+          <p>Work Time: 2 Year (August 2023 - Present)</p>
         </div>
         <div className={classes.workExperiences__itemList}>
-          Position: Unity Game Developer <br />
-          Company: Inside Dark Studio <br />
-          Work Time: 3 Month (December 2023 - February 2024)
+          <p className={classes.workExperiences__jobTitle}>
+            Position: Proffesor
+          </p>
+          <p>Company: Universidad Argentina De La Empresa</p>
+          <p>Work Time: 3 Month (February 2025 - Present)</p>
         </div>
         <div className={classes.workExperiences__itemList}>
-          Position: Assistant Proffesor and Proffesor <br />
-          Company: Escuela Davinci <br />
-          Work Time: 2 Year (August 2022 - Present)
+          <p className={classes.workExperiences__jobTitle}>
+            Position: Team Leader of Game Dev Area & BackEnd Programmer
+          </p>
+          <p>Company: Inside Dark Studio</p>
+          <p>Work Time: 8 Month (March 2024 - December)</p>
         </div>
         <div className={classes.workExperiences__itemList}>
-          Position: Full-stack Programmer <br />
-          Company: CH SRL <br />
-          Work Time: 5 Month (November 2022 - February 2023)
+          <p className={classes.workExperiences__jobTitle}>
+            Position: Unity Game Developer
+          </p>
+          <p>Company: Inside Dark Studio</p>
+          <p>Work Time: 3 Month (December 2023 - February 2024)</p>
         </div>
         <div className={classes.workExperiences__itemList}>
-          Position: SQL Programmer / Database Manager <br />
-          Company: FUSANA <br />- 4 Work Time: Month (May 2022 - September 2022)
+          <p className={classes.workExperiences__jobTitle}>
+            Position: Full-stack Programmer
+          </p>
+          <p>Company: CH SRL</p>
+          <p>Work Time: 9 Month (February 2023 - October 2023)</p>
+        </div>
+        <div className={classes.workExperiences__itemList}>
+          <p className={classes.workExperiences__jobTitle}>
+            Position: BackEnd Programmer / Database Manager
+          </p>
+          <p>Company: FUSANA</p>
+          <p>Work Time: 4 Month (August 2022 - January 2023)</p>
         </div>
       </div>
     </div>

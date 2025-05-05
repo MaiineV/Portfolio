@@ -14,6 +14,7 @@ body{
     align-items: center;
     padding: 2rem 1rem;
     background: $bg;
+    
 
     @media (min-width: $breakpoint-md) {
         display: grid;
@@ -52,6 +53,7 @@ body{
         font-size: $large-font-size;
         padding: 0.5rem;
         color: $font;
+        font-weight: bold;
 
         @media (min-width: $breakpoint-md) {
             grid-column-start: 3;

@@ -1,40 +1,61 @@
 @import "./variables.scss";
 
-body{
-    margin: 0;
-    background: $bg;
+body {
+  margin: 0;
+  background: $bg;
 }
 
-.workExperiences{
-    min-height: 100vh;
+.workExperiences {
+  min-height: 100vh;
 
-    font-family: $RobotSlab;
+  font-family: $RobotSlab;
+  color: $font;
+  font-weight: bold;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  align-items: center;
+
+  &__title {
+    display: flex;
+    font-size: calc($large-font-size * 1.5);
     color: $font;
+    padding: 0.5rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
 
+  &__jobsList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__jobTitle {
+    font-weight: bold;
+  }
+
+  &__itemList {
+    margin: 0.5rem;
+    background: $secondary;
+    color: $witheFont;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-
+    flex-wrap: wrap;
+    flex: 1 1 calc(33.333% - 2rem);
+    aspect-ratio: 1 / 1;
+    max-width: 500px;
+    min-width: 200px;
+    border: 3px solid $details;
+    padding: 1rem;
     margin: 1rem;
+    font-weight: normal;
 
-    align-items: center;
-
-    &__title{
-        display: flex;
-        font-size: xx-large;
-        padding: .5rem;
-        margin-top: 2rem;
-
-        border: solid $details .15rem;
-        background-color: $secondary;
+    p {
+      line-height: 24pt;
     }
-
-    &__itemList{
-        background: $secondary;
-        display: flex;
-        line-height: 26pt;
-        border: 3px solid $details;
-        padding: 1rem;
-        margin: 1rem;
-    }
+  }
 }
