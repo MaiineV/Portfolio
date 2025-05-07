@@ -8,7 +8,7 @@ body {
 .workExperiences {
   min-height: 100vh;
 
-  font-family: $RobotSlab;
+  font-family: $Lemonada;
   color: $font;
   font-weight: bold;
 
@@ -22,9 +22,9 @@ body {
     display: flex;
     font-size: calc($large-font-size * 1.5);
     color: $font;
-    padding: 0.5rem;
-    margin-top: 2rem;
     text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   &__jobsList {

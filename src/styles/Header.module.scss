@@ -5,7 +5,7 @@ body {
 }
 
 .nav {
-  font-family: $RobotSlab;
+  font-family: $Lemonada;
   font-size: $medium-font-size;
   background: $primary;
   padding: 0.5rem 1.5rem;
@@ -17,7 +17,7 @@ body {
   align-items: center;
 
   &__logo {
-    font-family: $LogoFont;
+    font-family: $Nunito;
     font-size: $large-font-size;
     color: #FCFCFC;
     text-decoration: none;

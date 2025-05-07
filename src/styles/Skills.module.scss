@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 @mixin titles($fontSizeMultiply: 1) {
-  font-family: $RobotSlab;
+  font-family: $Lemonada;
   font-size: calc($large-font-size * $fontSizeMultiply);
 }
 
@@ -26,25 +26,18 @@ body {
   align-items: center;
   justify-content: center;
 
-  margin: 1rem;
-
   gap: 1rem;
 
-  color: #FCFCFC;
+  color: #fcfcfc;
 
-  @media (min-width: $breakpoint-md) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
-
-    align-items: normal;
-    gap: .5rem;
-
-    height:auto;
-  }
-
-  & > div {
+  &__skillList {
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+    }
   }
 
   &__title {
@@ -53,49 +46,42 @@ body {
     font-size: calc($large-font-size * 1.5);
     color: $font;
     font-weight: bold;
-
-    @media (min-width: $breakpoint-md) {
-      grid-column: 1 / 4;
-      grid-row: 1;
-
-      width: 100%;
-      height: auto;
-
-      text-align: center;
-      justify-content: center;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   &__category {
+    display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 1rem;
 
     border: solid $details 0.2rem;
-    width: calc(100% - 1.2rem);
 
     align-items: center;
     justify-content: center;
 
     background: $primary;
 
-    font-family: $RobotSlab;
+    font-family: $Lemonada;
 
     padding: 1rem;
 
+    height: max-content;
+    width: calc(85vw);
+
     @media (min-width: $breakpoint-md) {
-      grid-row: 2;
-
-      width: calc(100% - 3rem);
-      height:max-content;
-
-      justify-content:flex-start;
+      width: calc((100vw / 3) - 5vw);
     }
 
     & > p {
       display: flex;
       margin: 0;
 
-      text-align: center
+      text-align: center;
     }
 
     &__titleCategory {

@@ -1,0 +1,51 @@
+.about {
+    padding: 2rem;
+    h2 { text-align: center; margin-bottom: 1.5rem; }
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      .photo {
+        width: 120px; height: 120px; border-radius: 50%;
+        object-fit: cover;
+      }
+      .bio {
+        flex: 1; font-size: 1rem; line-height: 1.5;
+      }
+    }
+  
+    .timeline {
+      position: relative; margin: 2rem 0;
+      &::before {
+        content: ''; position: absolute; left: 20px; top: 0; bottom: 0;
+        width: 2px; background: #ccc;
+      }
+      .event {
+        display: flex; position: relative; margin-bottom: 1.5rem;
+        .dot {
+          width: 12px; height: 12px; background: #007acc;
+          border-radius: 50%; margin-right: 1rem; margin-left: 14px;
+          margin-top: 4px;
+        }
+        .content {
+          .year { font-weight: bold; }
+          .degree { margin: 0.2rem 0; }
+          .school { font-style: italic; }
+          .note { color: #666; }
+        }
+      }
+    }
+  
+    .extras {
+      margin-top: 2rem;
+      h4 { margin-bottom: 0.5rem; }
+      .pills {
+        display: flex; flex-wrap: wrap; gap: 0.5rem;
+        span {
+          padding: 0.3rem 0.8rem; background: #f0f0f0;
+          border-radius: 999px; font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  

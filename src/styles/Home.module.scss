@@ -6,7 +6,7 @@ body{
 
 .home{
     min-height:80vh;
-    font-family: $RobotSlab;
+    font-family: $Lemonada;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -48,7 +48,7 @@ body{
     }
 
     &__name{
-        font-family: $LogoFont;
+        font-family: $Nunito;
         display: flex;
         font-size: $large-font-size;
         padding: 0.5rem;
@@ -110,7 +110,7 @@ body{
         }
 
         &> div{
-            font: $LogoFont;
+            font: $Nunito;
             font-size: $large-font-size;
             color: $font;
             padding-top: .5rem;
