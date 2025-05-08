@@ -1,61 +1,96 @@
+// src/styles/WorkExperience.module.scss
 @import "./variables.scss";
 
-body {
-  margin: 0;
-  background: $bg;
-}
+.timeline {
+  position: relative;
+  padding: 2rem 1rem;
 
-.workExperiences {
-  min-height: 100vh;
-
-  font-family: $Lemonada;
-  color: $font;
-  font-weight: bold;
-
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-
-  align-items: center;
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   left: 24px;
+  //   top: 0;
+  //   bottom: 0;
+  //   width: 4px;
+  //   background: $details;
+  // }
 
   &__title {
-    display: flex;
+    text-align: center;
     font-size: calc($large-font-size * 1.5);
     color: $font;
-    text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
-  &__jobsList {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  &__list {
+    position: relative;        // para que su ::before quede dentro de este contenedor
+    max-width: 800px;          // ancho máximo para centrar
+    margin: 0 auto;            // centrar horizontalmente
+    padding-left: 48px;        // espacio para la línea + bullets
+
+    // list-style: none;
+    // padding: 0;
+    // margin: 0 auto;
+    // max-width: 800px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 20px;              // ajuste para que quede justo junto al centro de los bullets
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: $details;    // tu color de línea
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 60px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: $secondary;
+      border: 3px solid $details;
+    }
+  }
+
+  &__date {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: $font;
+  }
+
+  &__content {
+    background: $secondary;
+    color: $witheFont;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   &__jobTitle {
+    margin: 0;
     font-weight: bold;
   }
 
-  &__itemList {
-    margin: 0.5rem;
-    background: $secondary;
-    color: $witheFont;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    flex: 1 1 calc(33.333% - 2rem);
-    aspect-ratio: 1 / 1;
-    max-width: 500px;
-    min-width: 200px;
-    border: 3px solid $details;
-    padding: 1rem;
-    margin: 1rem;
-    font-weight: normal;
+  &__company {
+    margin: 0.25rem 0;
+    font-style: italic;
+  }
 
-    p {
-      line-height: 24pt;
-    }
+  &__duration {
+    margin: 0;
+    font-size: 0.85rem;
+    opacity: 0.8;
   }
 }
