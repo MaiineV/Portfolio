@@ -11,15 +11,17 @@ import Footer from "./Footer";
 const Layout = () => {
   return (
     <div>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Portfolio />} exact />
-          <Route path="/skills" element={<Skills />} exact />
-          <Route path="/experience" element={<WorkExperience />} exact />
-          <Route path="/aboutme" element={<AboutMe />} exact />
-        </Routes>
-        <Footer />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Portfolio />} exact />
+        <Route path="/skills" element={<Skills />} exact />
+        <Route path="/experience" element={<WorkExperience />} exact />
+        <Route path="/aboutme" element={<AboutMe />} exact />
+
+        <Route path="*" element={<Home />} />
+      </Routes>
+      <Footer />
     </div>
   );
 };
