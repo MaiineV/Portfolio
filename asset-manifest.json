@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.a7908887.css",
-    "main.js": "/Portfolio/static/js/main.77debfed.js",
+    "main.css": "/Portfolio/static/css/main.d39ecd14.css",
+    "main.js": "/Portfolio/static/js/main.351d72aa.js",
     "static/media/AIAOE.rar": "/Portfolio/static/media/AIAOE.1c9ac9332e8d624db819.rar",
     "static/media/robotpalooza_image.jpg": "/Portfolio/static/media/robotpalooza_image.43379fd92e7b90f2eab5.jpg",
     "static/media/Unreal.png": "/Portfolio/static/media/Unreal.1b7010d5471036243781.png",
@@ -11,11 +11,11 @@
     "static/media/image-portfolio.jpg": "/Portfolio/static/media/image-portfolio.050cb2e83d58f393d304.jpg",
     "static/media/menu-icon.png": "/Portfolio/static/media/menu-icon.3c31b454a3a86279575b.png",
     "index.html": "/Portfolio/index.html",
-    "main.a7908887.css.map": "/Portfolio/static/css/main.a7908887.css.map",
-    "main.77debfed.js.map": "/Portfolio/static/js/main.77debfed.js.map"
+    "main.d39ecd14.css.map": "/Portfolio/static/css/main.d39ecd14.css.map",
+    "main.351d72aa.js.map": "/Portfolio/static/js/main.351d72aa.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7908887.css",
-    "static/js/main.77debfed.js"
+    "static/css/main.d39ecd14.css",
+    "static/js/main.351d72aa.js"
   ]
 }
