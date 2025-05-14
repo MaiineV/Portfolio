@@ -5,16 +5,6 @@
   position: relative;
   padding: 2rem 1rem;
 
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   left: 24px;
-  //   top: 0;
-  //   bottom: 0;
-  //   width: 4px;
-  //   background: $details;
-  // }
-
   &__title {
     text-align: center;
     font-size: calc($large-font-size * 1.5);
@@ -23,15 +13,10 @@
   }
 
   &__list {
-    position: relative;        // para que su ::before quede dentro de este contenedor
-    max-width: 800px;          // ancho máximo para centrar
-    margin: 0 auto;            // centrar horizontalmente
-    padding-left: 48px;        // espacio para la línea + bullets
-
-    // list-style: none;
-    // padding: 0;
-    // margin: 0 auto;
-    // max-width: 800px;
+    position: relative;       
+    max-width: 800px;          
+    margin: 0 auto;           
+    padding-left: 48px;
 
     &::before {
       content: "";
