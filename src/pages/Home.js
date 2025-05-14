@@ -12,11 +12,8 @@ const Home = () => {
         Ignacio Martinez
       </div>
       <div className={classes.home__resume}>
-        Graduated game developer 
-        trained in object oriented programming, knowledgeable 
-        of design patterns and principles, skilled in problem solving 
-        and critical thinking, with a strong foundation in linear algebra 
-        and logic. Currently working on furthering my studies in C++.
+      Graduated game developer trained in object oriented programming, with expertice in Unity C# and Unreal C++, currently searching for a challeng and a new oportunities!
+      Knowledge on Game Design, level design, full-stack development and producer to!
       </div>
     </div>
   )
