@@ -16,7 +16,7 @@ const experiences = [
     duration: "3 Months"
   },
   {
-    title: "Team Leader of Game Dev Area & BackEnd Programmer",
+    title: "Game Producer, BackEnd Programmer and Game Designer",
     company: "Inside Dark Studio",
     period: "March 2024 – December 2024",
     duration: "8 Months"
