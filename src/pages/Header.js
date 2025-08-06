@@ -19,6 +19,15 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(prev => !prev)
   const closeMenu = () => setIsMenuOpen(false)
 
+  // ADD THIS: Function to handle navigation with scroll to top
+  const handleNavigation = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Use 'auto' for instant scroll
+    })
+    closeMenu()
+  }
+
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +42,11 @@ const Header = () => {
   // Close mobile menu when route changes
   useEffect(() => {
     setIsMenuOpen(false)
+  }, [location])
+
+  // ADD THIS: Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0)
   }, [location])
 
   // Prevent body scroll when mobile menu is open
@@ -62,7 +76,7 @@ const Header = () => {
           <Link 
             to="/" 
             className={classes.nav__logo}
-            onClick={closeMenu}
+            onClick={handleNavigation} // UPDATED
           >
             <span className={classes.nav__logo__icon}>{'</>'}</span>
             <span className={classes.nav__logo__text}>Portfolio</span>
@@ -78,6 +92,7 @@ const Header = () => {
                   isActiveRoute(item.path) ? classes.nav__button__active : ''
                 }`}
                 style={{'--delay': `${index * 0.1}s`}}
+                onClick={handleNavigation} // UPDATED
               >
                 <span className={classes.nav__button__icon}>{item.icon}</span>
                 <span className={classes.nav__button__text}>{item.label}</span>
@@ -110,7 +125,7 @@ const Header = () => {
             <Link 
               to="/" 
               className={classes.nav__mobile__logo}
-              onClick={closeMenu}
+              onClick={handleNavigation} // UPDATED
             >
               <span className={classes.nav__mobile__logo__icon}>{'</>'}</span>
               <span>Portfolio</span>
@@ -132,7 +147,7 @@ const Header = () => {
                 className={`${classes.nav__mobile__link} ${
                   isActiveRoute(item.path) ? classes.nav__mobile__link__active : ''
                 }`}
-                onClick={closeMenu}
+                onClick={handleNavigation} // UPDATED
                 style={{'--delay': `${index * 0.1}s`}}
               >
                 <span className={classes.nav__mobile__link__icon}>{item.icon}</span>

@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom'
 
 import classes from "../styles/Footer.module.scss"
 
-import gitHubImage from "../images/GitHub.png"
-import linkedinImage from "../images/Linkedin.png"
-
 const Footer = () => {
   const currentYear = new Date().getFullYear()
   
@@ -13,14 +10,12 @@ const Footer = () => {
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/agustin-martinez-731705213/",
-      image: linkedinImage,
       icon: "💼",
       color: "#0077B5"
     },
     {
       name: "GitHub", 
       url: "https://github.com/MaiineV",
-      image: gitHubImage,
       icon: "💻",
       color: "#333"
     }
@@ -35,7 +30,7 @@ const Footer = () => {
   ]
 
   const contactInfo = {
-    email: "contact@ignacio-martinez.dev", // Replace with actual email
+    email: "agustinmartinezbarrios2@gmail.com",
     location: "Buenos Aires, Argentina",
     availability: "Open to opportunities"
   }
@@ -72,11 +67,6 @@ const Footer = () => {
                 aria-label={`Visit my ${social.name} profile`}
                 style={{'--delay': `${index * 0.1}s`, '--color': social.color}}
               >
-                <img 
-                  src={social.image} 
-                  alt={`${social.name} Logo`}
-                  className={classes.footer__social__image}
-                />
                 <span className={classes.footer__social__icon}>{social.icon}</span>
                 <span className={classes.footer__social__tooltip}>{social.name}</span>
               </a>
@@ -117,18 +107,6 @@ const Footer = () => {
               <span className={classes.footer__contact__icon}>🚀</span>
               <span className={classes.footer__contact__text}>{contactInfo.availability}</span>
             </div>
-          </div>
-        </div>
-
-        {/* Skills Highlight */}
-        <div className={classes.footer__section}>
-          <h3 className={classes.footer__section__title}>Specializing In</h3>
-          <div className={classes.footer__skills}>
-            <span className={classes.footer__skills__tag}>Unity C#</span>
-            <span className={classes.footer__skills__tag}>Unreal C++</span>
-            <span className={classes.footer__skills__tag}>React</span>
-            <span className={classes.footer__skills__tag}>Node.js</span>
-            <span className={classes.footer__skills__tag}>Game Design</span>
           </div>
         </div>
       </div>

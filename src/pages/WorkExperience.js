@@ -146,25 +146,28 @@ const WorkExperience = () => {
     companies: [...new Set(experiences.map(exp => exp.company))].length
   };
 
-  // Intersection Observer for timeline animations
+  // Animate cards on load and filter change
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const experienceId = parseInt(entry.target.dataset.experienceId);
-            setVisibleExperiences(prev => new Set([...prev, experienceId]));
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
+    // Reset all animations
+    setVisibleExperiences(new Set());
+    setHoveredExperience(null);
 
-    const experienceElements = document.querySelectorAll('[data-experience-id]');
-    experienceElements.forEach((el) => observer.observe(el));
+    // Start animations with staggered delay
+    const timeouts = [];
+    
+    filteredExperiences.forEach((exp, index) => {
+      const timeoutId = setTimeout(() => {
+        setVisibleExperiences(prev => new Set([...prev, exp.id]));
+      }, index * 200); // 200ms delay between each card
+      
+      timeouts.push(timeoutId);
+    });
 
-    return () => observer.disconnect();
-  }, [filteredExperiences]);
+    // Cleanup function to clear timeouts
+    return () => {
+      timeouts.forEach(timeout => clearTimeout(timeout));
+    };
+  }, [filteredExperiences]); // Re-run when filtered experiences change
 
   return (
     <div className={classes.experience}>
@@ -218,7 +221,7 @@ const WorkExperience = () => {
         
         {filteredExperiences.map((exp, index) => (
           <div
-            key={exp.id}
+            key={`${exp.id}-${selectedType}`} // Add selectedType to key to force re-render
             className={`${classes.experience__timeline__item} ${
               visibleExperiences.has(exp.id) ? classes.experience__timeline__item__visible : ''
             }`}
