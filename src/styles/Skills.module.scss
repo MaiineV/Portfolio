@@ -1,8 +1,35 @@
 @import "./variables.scss";
 
-@mixin titles($fontSizeMultiply: 1) {
-  font-family: $Lemonada;
-  font-size: calc($large-font-size * $fontSizeMultiply);
+// Keyframe animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--width);
+  }
 }
 
 @keyframes waveStripe {
@@ -10,190 +37,634 @@
     background-position: 0 0;
   }
   to {
-    background-position: 20px 20px;
-  } // coincide con background-size
-}
-
-@mixin skillBar($width: 100%, $bg-color: #000) {
-  position: relative;
-  overflow: hidden;
-  text-align: right;
-  padding: 0.625rem 0.5rem;
-  width: $width;
-  background-color: $bg-color;
-
-  & > div {
-    position: relative;
-    z-index: 1;
-  }
-
-  // pseudo-elemento de franjas
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%; // ancho de la zona animada
-    background: repeating-linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.3) 0,
-      rgba(255, 255, 255, 0.3) 10px,
-      transparent 10px,
-      transparent 20px
-    );
-    background-size: 20px 20px; // <— aquí declaras el tamaño del patrón
-    animation: waveStripe 1s linear infinite;
-    z-index: 0;
+    background-position: 40px 40px;
   }
 }
 
-body {
-  margin: 0;
-  background: $bg;
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 .skills {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(135deg, $bg 0%, lighten($bg, 5%) 100%);
+  padding: 4rem 2rem;
+  font-family: $Lemonada;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 
-  gap: 1rem;
+  // Background pattern
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba($primary, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba($secondary, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
 
-  color: #fcfcfc;
-
-  margin-bottom: 2rem;
-
-  &__skillList {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    @media (min-width: $breakpoint-md) {
-      flex-direction: row;
-    }
+  // Header Section
+  &__header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease-out;
   }
 
   &__title {
-    @include titles(2);
-
-    font-size: calc($large-font-size * 1.5);
+    font-family: $Nunito;
+    font-size: calc($large-font-size * 1.8);
     color: $font;
-    font-weight: bold;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, $font, $details);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: calc($large-font-size * 2.2);
+    }
+  }
+
+  &__subtitle {
+    font-family: $Nunito;
+    font-size: 1.2rem;
+    color: $details;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+    line-height: 1.6;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 1.4rem;
+    }
+  }
+
+  // Stats Section
+  &__stats {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__stat {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: rgba(white, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba($secondary, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba($details, 0.15);
+      border-color: rgba($secondary, 0.3);
+
+      .skills__stat__number {
+        animation: pulse 0.6s ease-in-out;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, $secondary, $details);
+    }
+
+    &__number {
+      font-family: $Nunito;
+      font-size: 2rem;
+      font-weight: 700;
+      color: $details;
+      display: block;
+      margin-bottom: 0.5rem;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: 2.5rem;
+      }
+    }
+
+    &__label {
+      font-family: $Nunito;
+      font-size: 0.9rem;
+      color: $font;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+  }
+
+  // Tabs Section
+  &__tabs {
+    position: relative;
+    z-index: 1;
     display: flex;
     justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+  }
+
+  &__tab {
+    display: flex;
     align-items: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    gap: 0.8rem;
+    background: rgba(white, 0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    border-radius: 25px;
+    padding: 1rem 1.5rem;
+    font-family: $Nunito;
+    font-weight: 600;
+    font-size: 1rem;
+    color: $details;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    animation: slideInRight 0.6s ease-out calc(var(--delay, 0s) + 0.6s) both;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba($details, 0.2);
+      border-color: rgba($secondary, 0.3);
+
+      .skills__tab__icon {
+        animation: float 0.6s ease-in-out;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    &:hover::before {
+      left: 100%;
+    }
+
+    &__active {
+      background: linear-gradient(45deg, $secondary, $details);
+      color: white;
+      border-color: $font;
+      box-shadow: 0 6px 20px rgba($secondary, 0.3);
+
+      &:hover {
+        background: linear-gradient(45deg, lighten($secondary, 5%), lighten($details, 5%));
+        transform: translateY(-3px) scale(1.02);
+      }
+    }
+
+    &__icon {
+      font-size: 1.3rem;
+      transition: transform 0.3s ease;
+    }
+
+    &__text {
+      flex: 1;
+    }
+
+    &__count {
+      background: rgba(white, 0.2);
+      padding: 0.3rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .skills__tab__active & {
+      &__count {
+        background: rgba(white, 0.3);
+      }
+    }
+  }
+
+  // Content Section
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   &__category {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 1rem;
+    animation: fadeInUp 0.8s ease-out 0.8s both;
 
-    border: solid $details 0.2rem;
-
-    align-items: center;
-    justify-content: center;
-
-    background: $primary;
-
-    font-family: $Lemonada;
-
-    padding: 1rem;
-
-    height: max-content;
-    width: calc(85vw);
-
-    @media (min-width: $breakpoint-md) {
-      width: calc((100vw / 3) - 5vw);
-    }
-
-    & > p {
-      display: flex;
-      margin: 0;
-
+    &__header {
       text-align: center;
+      margin-bottom: 3rem;
     }
 
-    &__titleCategory {
-      @include titles();
+    &__title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      font-family: $Nunito;
+      font-size: 2rem;
+      font-weight: 700;
+      color: $details;
+      margin-bottom: 1rem;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: 2.5rem;
+      }
     }
 
-    &__container {
-      &100 {
-        width: 100%;
-        background-color: $loadingBarBackground;
-        & > div {
-          @include skillBar(100%, $loadingBarColor);
-        }
+    &__icon {
+      font-size: 2.5rem;
+      animation: float 3s ease-in-out infinite;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: 3rem;
       }
-      &90 {
-        width: 100%;
-        background-color: $loadingBarBackground;
-        & > div {
-          @include skillBar(90%, $loadingBarColor);
-        }
-      }
-      &80 {
-        width: 100%;
-        background-color: $loadingBarBackground;
-        & > div {
-          @include skillBar(80%, $loadingBarColor);
-        }
-      }
-      &70 {
-        width: 100%;
-        background-color: $loadingBarBackground;
-        & > div {
-          @include skillBar(70%, $loadingBarColor);
-        }
-      }
-      &60 {
-        width: 100%;
-        background-color: $loadingBarBackground;
-        & > div {
-          @include skillBar(60%, $loadingBarColor);
-        }
-      }
-      &50 {
-        width: 100%;
-        background-color: $loadingBarBackground;
-        & > div {
-          @include skillBar(50%, $loadingBarColor);
-        }
-      }
-      &40 {
-        width: 100%;
-        background-color: $loadingBarBackground;
-        & > div {
-          @include skillBar(40%, $loadingBarColor);
-        }
-      }
-      &30 {
-        width: 100%;
-        background-color: $loadingBarBackground;
-        & > div {
-          @include skillBar(30%, $loadingBarColor);
-        }
-      }
-      &20 {
-        width: 100%;
-        background-color: $loadingBarBackground;
-        & > div {
-          @include skillBar(20%, $loadingBarColor);
-        }
-      }
-      &10 {
-        width: 100%;
-        background-color: $loadingBarBackground;
-        & > div {
-          @include skillBar(10%, $loadingBarColor);
-        }
+    }
+
+    &__description {
+      font-family: $Nunito;
+      font-size: 1.1rem;
+      color: $font;
+      opacity: 0.9;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+
+      @media (max-width: 400px) {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
     }
   }
+
+  // Individual Skill Card
+  &__skill {
+    background: rgba(white, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba($secondary, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+
+    &__animated {
+      animation: fadeInUp 0.3s ease-out calc(var(--delay, 0s) + 0.5s) both;
+    }
+
+    &:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 40px rgba($details, 0.15);
+      border-color: rgba($secondary, 0.3);
+
+      .skills__skill__progressFill {
+        &::after {
+          animation: waveStripe 1.5s linear infinite;
+        }
+      }
+    }
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      gap: 1rem;
+    }
+
+    &__name {
+      font-family: $Nunito;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: $details;
+      margin: 0;
+      flex: 1;
+    }
+
+    &__badge {
+      padding: 0.4rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: $Nunito;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+
+      &__expert {
+        background: rgba(#10B981, 0.1);
+        color: #10B981;
+        border: 1px solid rgba(#10B981, 0.3);
+      }
+
+      &__advanced {
+        background: rgba($secondary, 0.1);
+        color: $secondary;
+        border: 1px solid rgba($secondary, 0.3);
+      }
+
+      &__proficient {
+        background: rgba($font, 0.1);
+        color: $font;
+        border: 1px solid rgba($font, 0.3);
+      }
+
+      &__intermediate {
+        background: rgba(#F59E0B, 0.1);
+        color: #F59E0B;
+        border: 1px solid rgba(#F59E0B, 0.3);
+      }
+
+      &__learning {
+        background: rgba($details, 0.1);
+        color: $details;
+        border: 1px solid rgba($details, 0.3);
+      }
+    }
+
+    &__description {
+      font-family: $Nunito;
+      color: $font;
+      margin: 0 0 1.5rem 0;
+      line-height: 1.5;
+      opacity: 0.8;
+    }
+
+    &__progress {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__progressBar {
+      flex: 1;
+      height: 12px;
+      background: rgba($loadingBarBackground, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    &__progressFill {
+      height: 100%;
+      border-radius: 8px;
+      position: relative;
+      width: 0%;
+      transition: width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      
+      .skills__skill__animated & {
+        animation: progressFill 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) calc(var(--delay, 0s) + 0.5s) both;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: repeating-linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.1) 0,
+          rgba(255, 255, 255, 0.1) 10px,
+          transparent 10px,
+          transparent 20px
+        );
+        background-size: 40px 40px;
+      }
+
+      &__expert {
+        background: linear-gradient(45deg, #10B981, #059669);
+      }
+
+      &__advanced {
+        background: linear-gradient(45deg, $secondary, darken($secondary, 10%));
+      }
+
+      &__proficient {
+        background: linear-gradient(45deg, $font, darken($font, 10%));
+      }
+
+      &__intermediate {
+        background: linear-gradient(45deg, #F59E0B, #D97706);
+      }
+
+      &__learning {
+        background: linear-gradient(45deg, $details, darken($details, 10%));
+      }
+    }
+
+    &__percentage {
+      font-family: $Nunito;
+      font-weight: 700;
+      color: $details;
+      font-size: 1rem;
+      min-width: 45px;
+      text-align: right;
+    }
+  }
+
+  // Legend Section
+  &__legend {
+    position: relative;
+    z-index: 1;
+    margin-top: 4rem;
+    padding: 2rem;
+    background: rgba(white, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba($secondary, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.8s ease-out 1.2s both;
+
+    &__title {
+      font-family: $Nunito;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: $details;
+      margin: 0 0 1.5rem 0;
+      text-align: center;
+    }
+
+    &__items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: $Nunito;
+      font-size: 0.9rem;
+      color: $font;
+      font-weight: 500;
+    }
+
+    &__indicator {
+      width: 20px;
+      height: 12px;
+      border-radius: 6px;
+      flex-shrink: 0;
+
+      &__expert {
+        background: linear-gradient(45deg, #10B981, #059669);
+      }
+
+      &__advanced {
+        background: linear-gradient(45deg, $secondary, darken($secondary, 10%));
+      }
+
+      &__proficient {
+        background: linear-gradient(45deg, $font, darken($font, 10%));
+      }
+
+      &__intermediate {
+        background: linear-gradient(45deg, #F59E0B, #D97706);
+      }
+
+      &__learning {
+        background: linear-gradient(45deg, $details, darken($details, 10%));
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 600px) {
+  .skills {
+    padding: 2rem 1rem;
+
+    &__tabs {
+      gap: 0.5rem;
+    }
+
+    &__tab {
+      padding: 0.8rem 1rem;
+      font-size: 0.9rem;
+
+      &__text {
+        display: none;
+      }
+
+      &__count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        min-width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7rem;
+        background: $secondary;
+        color: white;
+      }
+    }
+
+    &__skill {
+      padding: 1.5rem;
+
+      &__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      &__progress {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: stretch;
+      }
+
+      &__percentage {
+        text-align: center;
+      }
+    }
+  }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+  .skills {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+// Focus states for accessibility
+.skills__tab:focus {
+  outline: 2px solid $font;
+  outline-offset: 2px;
 }
