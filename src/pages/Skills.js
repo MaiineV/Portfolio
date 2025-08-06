@@ -60,7 +60,6 @@ const overallStats = {
 const Skills = () => {
   const [selectedCategory, setSelectedCategory] = useState(0);
   const [animatedSkills, setAnimatedSkills] = useState(new Set());
-  const [isVisible, setIsVisible] = useState(false);
   const skillsRef = useRef(null);
 
   // Intersection Observer for animations
@@ -68,7 +67,6 @@ const Skills = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
           // Animate skills one by one
           skillsData[selectedCategory].skills.forEach((_, index) => {
             setTimeout(() => {
@@ -90,12 +88,10 @@ const Skills = () => {
   // Reset animations when category changes
   useEffect(() => {
     setAnimatedSkills(new Set());
-    setIsVisible(false);
     if (skillsRef.current) {
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
-            setIsVisible(true);
             skillsData[selectedCategory].skills.forEach((_, index) => {
               setTimeout(() => {
                 setAnimatedSkills(prev => new Set([...prev, `${selectedCategory}-${index}`]));
