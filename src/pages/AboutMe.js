@@ -74,11 +74,6 @@ const interests = [
 const AboutMe = () => {
   const [activeTab, setActiveTab] = useState('overview');
 
-  const downloadResume = () => {
-    // This would normally download a PDF resume
-    alert("Resume download feature - You would implement this to download your actual resume PDF");
-  };
-
   const tabs = [
     { id: 'overview', label: 'Overview', icon: '👨‍💻' },
     { id: 'education', label: 'Education', icon: '🎓' },
@@ -132,13 +127,6 @@ const AboutMe = () => {
                 <span className={styles.about__intro__stat__label}>Projects Built</span>
               </div>
             </div>
-            <button 
-              className={styles.about__intro__resume}
-              onClick={downloadResume}
-            >
-              <span className={styles.about__intro__resume__icon}>📄</span>
-              Download Resume
-            </button>
           </div>
         </div>
       </div>
