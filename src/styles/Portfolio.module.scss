@@ -1,75 +1,596 @@
 @import "./variables.scss";
 
+// Keyframe animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
 .portfolio {
-  background: $bg;
-  padding: 2rem;
+  background: linear-gradient(135deg, $bg 0%, lighten($bg, 5%) 100%);
+  padding: 4rem 2rem;
   font-family: $Lemonada;
-  text-align: center;
-  min-height: 80vh;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+
+  // Background pattern
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba($primary, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba($secondary, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  // Header Section
+  &__header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease-out;
+  }
 
   &__title {
-    font-size: calc($large-font-size * 1.5);
+    font-family: $Nunito;
+    font-size: calc($large-font-size * 1.8);
     color: $font;
-    margin-bottom: 2rem;
-  }
+    margin-bottom: 1rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, $font, $details);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-
-  &__card {
-    background: $primary;
-    padding: 1rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__image {
-    width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
-    max-height: 200px;
-    object-fit: cover;
-  }
-
-  &__card__title {
-    font-size: $medium-font-size;
-    color: $font;
-    margin-top: 1rem;
-    color: #fcfcfcfc;
-  }
-
-  &__card__description {
-    color: $font;
-    margin: 0.5rem 0 1rem;
-    color: #fcfcfcfc;
-  }
-
-  &__card__buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  &__button {
-    background: $secondary;
-    color: $font;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s ease;
-    color: #fcfcfcfc;
-
-    &:hover {
-      background: darken($secondary, 10%);
+    @media (min-width: $breakpoint-md) {
+      font-size: calc($large-font-size * 2.2);
     }
   }
+
+  &__subtitle {
+    font-family: $Nunito;
+    font-size: 1.2rem;
+    color: $details;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+    line-height: 1.6;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 1.4rem;
+    }
+  }
+
+  // Filter Section
+  &__filters {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+  }
+
+  &__filter {
+    background: rgba(white, 0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    border-radius: 25px;
+    padding: 0.8rem 1.5rem;
+    font-family: $Nunito;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: $details;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    animation: slideInRight 0.6s ease-out calc(var(--delay, 0s) + 0.4s) both;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba($details, 0.2);
+      border-color: rgba($secondary, 0.3);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    &:hover::before {
+      left: 100%;
+    }
+
+    &__active {
+      background: linear-gradient(45deg, $secondary, $details);
+      color: white;
+      border-color: $font;
+      box-shadow: 0 6px 20px rgba($secondary, 0.3);
+
+      &:hover {
+        background: linear-gradient(45deg, lighten($secondary, 5%), lighten($details, 5%));
+        transform: translateY(-3px) scale(1.05);
+      }
+    }
+  }
+
+  // Grid Section
+  &__grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto 4rem;
+
+    @media (max-width: 400px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  // Card Styles
+  &__card {
+    background: rgba(white, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba($secondary, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: fadeInUp 0.8s ease-out calc(var(--delay, 0s) + 0.6s) both;
+    box-shadow: 
+      0 10px 40px rgba($details, 0.1),
+      0 0 0 1px rgba(white, 0.05);
+
+    &:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 
+        0 20px 60px rgba($details, 0.2),
+        0 0 0 1px rgba($secondary, 0.2);
+      border-color: rgba($secondary, 0.3);
+
+      .portfolio__card__image {
+        transform: scale(1.1);
+      }
+
+      .portfolio__card__overlay {
+        opacity: 1;
+      }
+
+      .portfolio__card__tech {
+        transform: translateY(-2px);
+      }
+    }
+
+    &__featured {
+      border: 2px solid $font;
+      box-shadow: 
+        0 15px 50px rgba($font, 0.2),
+        0 0 0 1px rgba($font, 0.1);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, $font, $secondary, $details);
+        z-index: 2;
+      }
+    }
+
+    // Card Header
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 1.5rem 0;
+      position: relative;
+      z-index: 3;
+    }
+
+    &__category {
+      background: rgba($primary, 0.1);
+      color: $primary;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: $Nunito;
+    }
+
+    &__status {
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: $Nunito;
+
+      &__released {
+        background: rgba(#10B981, 0.1);
+        color: #10B981;
+      }
+
+      &__prototype {
+        background: rgba($secondary, 0.1);
+        color: $secondary;
+      }
+    }
+
+    // Image Container
+    &__imageContainer {
+      position: relative;
+      margin: 1rem 1.5rem;
+      border-radius: 15px;
+      overflow: hidden;
+      height: 200px;
+      background: $loadingBarBackground;
+    }
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    &__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba($primary, 0.9), rgba($secondary, 0.9));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    &__overlayContent {
+      text-align: center;
+      color: white;
+    }
+
+    &__overlayText {
+      font-family: $Nunito;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    &__featured__badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: linear-gradient(45deg, $font, $secondary);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: $Nunito;
+      box-shadow: 0 4px 15px rgba($font, 0.3);
+      z-index: 2;
+    }
+
+    // Card Content
+    &__content {
+      padding: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    &__title {
+      font-family: $Nunito;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: $details;
+      margin: 0 0 0.8rem 0;
+      line-height: 1.3;
+    }
+
+    &__description {
+      font-family: $Nunito;
+      color: $font;
+      margin: 0 0 1.5rem 0;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    // Technologies
+    &__technologies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__tech {
+      background: rgba($secondary, 0.1);
+      color: $secondary;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: $Nunito;
+      transition: all 0.3s ease;
+      border: 1px solid rgba($secondary, 0.2);
+
+      &:hover {
+        background: rgba($secondary, 0.2);
+        transform: translateY(-1px);
+      }
+    }
+
+    // Card Actions
+    &__actions {
+      display: flex;
+      gap: 1rem;
+      padding: 0 1.5rem 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    // Glow Effect
+    &__glow {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+      background: radial-gradient(circle, rgba($secondary, 0.2) 0%, transparent 70%);
+      border-radius: 30px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+
+      &__active {
+        opacity: 1;
+        animation: glow 2s ease-in-out infinite;
+      }
+    }
+  }
+
+  // Button Styles
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: $Nunito;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    justify-content: center;
+
+    &__icon {
+      font-size: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+
+      .portfolio__button__icon {
+        transform: scale(1.2);
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    &:hover::before {
+      left: 100%;
+    }
+
+    &__primary {
+      background: linear-gradient(45deg, $secondary, $details);
+      color: white;
+      box-shadow: 0 4px 15px rgba($secondary, 0.3);
+
+      &:hover {
+        box-shadow: 0 6px 20px rgba($secondary, 0.4);
+        background: linear-gradient(45deg, lighten($secondary, 5%), lighten($details, 5%));
+      }
+    }
+
+    &__secondary {
+      background: transparent;
+      color: $details;
+      border: 2px solid $details;
+
+      &:hover {
+        background: $details;
+        color: white;
+        box-shadow: 0 4px 15px rgba($details, 0.3);
+      }
+    }
+  }
+
+  // Stats Section
+  &__stats {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease-out 1s both;
+
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__stat {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: rgba(white, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba($secondary, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba($details, 0.15);
+      border-color: rgba($secondary, 0.3);
+    }
+
+    &__number {
+      font-family: $Nunito;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $details;
+      display: block;
+      margin-bottom: 0.5rem;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: 3rem;
+      }
+    }
+
+    &__label {
+      font-family: $Nunito;
+      font-size: 1rem;
+      color: $font;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 600px) {
+  .portfolio {
+    padding: 2rem 1rem;
+
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    &__filters {
+      gap: 0.5rem;
+    }
+
+    &__filter {
+      padding: 0.6rem 1rem;
+      font-size: 0.8rem;
+    }
+
+    &__card {
+      &__actions {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+    }
+  }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+  .portfolio {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+// Focus states for accessibility
+.portfolio__filter:focus,
+.portfolio__button:focus {
+  outline: 2px solid $font;
+  outline-offset: 2px;
 }
