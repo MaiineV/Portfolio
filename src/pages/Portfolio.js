@@ -157,6 +157,15 @@ const Portfolio = () => {
                 <span className={classes.portfolio__button__icon}>💻</span>
                 <span>View Code</span>
               </a>
+              <a 
+                href={project.codeLink} 
+                target="_blank" 
+                rel="noreferrer" 
+                className={`${classes.portfolio__button} ${classes.portfolio__button__secondary}`}
+              >
+                <span className={classes.portfolio__button__icon}>💻</span>
+                <span>View Code</span>
+              </a>
             </div>
 
             {/* Hover Effect Elements */}

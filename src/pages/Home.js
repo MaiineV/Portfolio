@@ -51,7 +51,7 @@ const Home = () => {
             <span className={classes.home__name__last}>Martinez</span>
           </div>
           <div className={classes.home__title}>
-            <span className={classes.home__title__main}>Game Developer</span>
+            <span className={classes.home__title__main}>Game Designer, Game Developer</span>
             <span className={classes.home__title__sub}>& Full-Stack Engineer</span>
           </div>
           <div className={classes.home__resume}>
