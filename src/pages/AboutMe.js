@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "../styles/AboutMe.module.scss";
 import selfImage from "../images/image-portfolio.jpg";
 
@@ -73,11 +73,6 @@ const interests = [
 
 const AboutMe = () => {
   const [activeTab, setActiveTab] = useState('overview');
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   const downloadResume = () => {
     // This would normally download a PDF resume
