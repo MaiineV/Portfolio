@@ -1,19 +1,17 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.f5e4fb15.css",
-    "main.js": "/Portfolio/static/js/main.e26e7ab1.js",
+    "main.css": "/Portfolio/static/css/main.9b48b7b1.css",
+    "main.js": "/Portfolio/static/js/main.ea729c31.js",
     "static/media/robotpalooza_image.jpg": "/Portfolio/static/media/robotpalooza_image.43379fd92e7b90f2eab5.jpg",
     "static/media/aoe_image.png": "/Portfolio/static/media/aoe_image.926f499d21a1ca03e3d6.png",
-    "static/media/GitHub.png": "/Portfolio/static/media/GitHub.282703f364da5ccec01a.png",
-    "static/media/Linkedin.png": "/Portfolio/static/media/Linkedin.3f338ffc60b98989319d.png",
     "static/media/image-portfolio.jpg": "/Portfolio/static/media/image-portfolio.050cb2e83d58f393d304.jpg",
     "static/media/banner.png": "/Portfolio/static/media/banner.329e895c162000cf5379.png",
     "index.html": "/Portfolio/index.html",
-    "main.f5e4fb15.css.map": "/Portfolio/static/css/main.f5e4fb15.css.map",
-    "main.e26e7ab1.js.map": "/Portfolio/static/js/main.e26e7ab1.js.map"
+    "main.9b48b7b1.css.map": "/Portfolio/static/css/main.9b48b7b1.css.map",
+    "main.ea729c31.js.map": "/Portfolio/static/js/main.ea729c31.js.map"
   },
   "entrypoints": [
-    "static/css/main.f5e4fb15.css",
-    "static/js/main.e26e7ab1.js"
+    "static/css/main.9b48b7b1.css",
+    "static/js/main.ea729c31.js"
   ]
 }
