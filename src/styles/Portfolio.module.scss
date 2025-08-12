@@ -24,7 +24,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -33,7 +34,8 @@
 }
 
 @keyframes glow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.5;
     transform: scale(1);
   }
@@ -53,7 +55,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -71,15 +74,22 @@
 
   // Background pattern
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-      radial-gradient(circle at 25% 25%, rgba($primary, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba($secondary, 0.1) 0%, transparent 50%);
+    background-image: radial-gradient(
+        circle at 25% 25%,
+        rgba($primary, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 75% 75%,
+        rgba($secondary, 0.1) 0%,
+        transparent 50%
+      );
     pointer-events: none;
     z-index: 0;
   }
@@ -158,13 +168,18 @@
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+      );
       transition: left 0.5s;
     }
 
@@ -179,7 +194,11 @@
       box-shadow: 0 6px 20px rgba($secondary, 0.3);
 
       &:hover {
-        background: linear-gradient(45deg, lighten($secondary, 5%), lighten($details, 5%));
+        background: linear-gradient(
+          45deg,
+          lighten($secondary, 5%),
+          lighten($details, 5%)
+        );
         transform: translateY(-3px) scale(1.05);
       }
     }
@@ -211,14 +230,11 @@
     position: relative;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     animation: fadeInUp 0.8s ease-out calc(var(--delay, 0s) + 0.6s) both;
-    box-shadow: 
-      0 10px 40px rgba($details, 0.1),
-      0 0 0 1px rgba(white, 0.05);
+    box-shadow: 0 10px 40px rgba($details, 0.1), 0 0 0 1px rgba(white, 0.05);
 
     &:hover {
       transform: translateY(-10px) scale(1.02);
-      box-shadow: 
-        0 20px 60px rgba($details, 0.2),
+      box-shadow: 0 20px 60px rgba($details, 0.2),
         0 0 0 1px rgba($secondary, 0.2);
       border-color: rgba($secondary, 0.3);
 
@@ -237,12 +253,10 @@
 
     &__featured {
       border: 2px solid $font;
-      box-shadow: 
-        0 15px 50px rgba($font, 0.2),
-        0 0 0 1px rgba($font, 0.1);
+      box-shadow: 0 15px 50px rgba($font, 0.2), 0 0 0 1px rgba($font, 0.1);
 
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -263,6 +277,13 @@
       z-index: 3;
     }
 
+    &__categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
     &__category {
       background: rgba($primary, 0.1);
       color: $primary;
@@ -271,6 +292,7 @@
       font-size: 0.8rem;
       font-weight: 600;
       font-family: $Nunito;
+      white-space: nowrap;
     }
 
     &__status {
@@ -281,13 +303,19 @@
       font-family: $Nunito;
 
       &__released {
-        background: rgba(#10B981, 0.1);
-        color: #10B981;
+        background: rgba(#10b981, 0.1);
+        color: #10b981;
       }
 
       &__prototype {
         background: rgba($secondary, 0.1);
         color: $secondary;
+      }
+
+      &__indevelopment {
+        background: rgba(#3b82f6, 0.1);
+        color: #3b82f6;
+        border: 1px solid rgba(#3b82f6, 0.3);
       }
     }
 
@@ -314,7 +342,11 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(45deg, rgba($primary, 0.9), rgba($secondary, 0.9));
+      background: linear-gradient(
+        45deg,
+        rgba($primary, 0.9),
+        rgba($secondary, 0.9)
+      );
       display: flex;
       align-items: center;
       justify-content: center;
@@ -413,7 +445,11 @@
       left: -20px;
       right: -20px;
       bottom: -20px;
-      background: radial-gradient(circle, rgba($secondary, 0.2) 0%, transparent 70%);
+      background: radial-gradient(
+        circle,
+        rgba($secondary, 0.2) 0%,
+        transparent 70%
+      );
       border-radius: 30px;
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -457,13 +493,18 @@
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
       transition: left 0.5s;
     }
 
@@ -478,7 +519,11 @@
 
       &:hover {
         box-shadow: 0 6px 20px rgba($secondary, 0.4);
-        background: linear-gradient(45deg, lighten($secondary, 5%), lighten($details, 5%));
+        background: linear-gradient(
+          45deg,
+          lighten($secondary, 5%),
+          lighten($details, 5%)
+        );
       }
     }
 

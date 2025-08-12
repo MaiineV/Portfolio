@@ -11,7 +11,7 @@ const skillsData = [
       { name: "C#", level: 90, description: "Object-oriented programming expertise" },
       { name: "Unreal Engine", level: 80, description: "Blueprint and C++ development" },
       { name: "C++", level: 80, description: "Performance-critical game systems" },
-      { name: "Godot", level: 50, description: "Open-source game engine" },
+      { name: "Godot", level: 80, description: "Open-source game engine" },
     ]
   },
   {
@@ -21,11 +21,14 @@ const skillsData = [
     skills: [
       { name: "HTML/CSS", level: 90, description: "Semantic markup and modern styling" },
       { name: "TypeScript", level: 90, description: "Type-safe JavaScript development" },
+      { name: "JavaScript", level: 90, description: "JavaScript development" },
       { name: "React", level: 80, description: "Component-based UI development" },
       { name: "MongoDB", level: 80, description: "NoSQL database management" },
       { name: "RESTful API", level: 80, description: "API design and implementation" },
+      { name: "Python", level: 80, description: "Backend development and scripting" },
+      { name: "Flask", level: 80, description: "Python web framework" },
+      { name: "SQLite", level: 80, description: "SQLite for TO-DO App" },
       { name: "Node.js", level: 70, description: "Server-side JavaScript runtime" },
-      { name: "Python", level: 60, description: "Backend development and scripting" },
       { name: "Django", level: 60, description: "Python web framework" },
       { name: "Vue.js", level: 50, description: "Progressive web framework" },
     ]
@@ -39,7 +42,7 @@ const skillsData = [
       { name: "Git Bash", level: 90, description: "Command-line version control" },
       { name: "Jira", level: 80, description: "Project management and tracking" },
       { name: "Trello", level: 80, description: "Task organization and planning" },
-      { name: "Miro", level: 60, description: "Visual collaboration and brainstorming" },
+      { name: "Miro", level: 80, description: "Visual collaboration and brainstorming" },
     ]
   }
 ];
