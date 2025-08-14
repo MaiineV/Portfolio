@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.9b48b7b1.css",
-    "main.js": "/Portfolio/static/js/main.ea729c31.js",
+    "main.css": "/Portfolio/static/css/main.06392dfa.css",
+    "main.js": "/Portfolio/static/js/main.b667329f.js",
+    "static/media/WaxyFotoItcho.jpg": "/Portfolio/static/media/WaxyFotoItcho.7176fc5785da99468ba0.jpg",
     "static/media/robotpalooza_image.jpg": "/Portfolio/static/media/robotpalooza_image.43379fd92e7b90f2eab5.jpg",
-    "static/media/aoe_image.png": "/Portfolio/static/media/aoe_image.926f499d21a1ca03e3d6.png",
     "static/media/image-portfolio.jpg": "/Portfolio/static/media/image-portfolio.050cb2e83d58f393d304.jpg",
     "static/media/banner.png": "/Portfolio/static/media/banner.329e895c162000cf5379.png",
     "index.html": "/Portfolio/index.html",
-    "main.9b48b7b1.css.map": "/Portfolio/static/css/main.9b48b7b1.css.map",
-    "main.ea729c31.js.map": "/Portfolio/static/js/main.ea729c31.js.map"
+    "main.06392dfa.css.map": "/Portfolio/static/css/main.06392dfa.css.map",
+    "main.b667329f.js.map": "/Portfolio/static/js/main.b667329f.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b48b7b1.css",
-    "static/js/main.ea729c31.js"
+    "static/css/main.06392dfa.css",
+    "static/js/main.b667329f.js"
   ]
 }
