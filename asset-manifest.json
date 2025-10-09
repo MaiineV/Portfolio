@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.06392dfa.css",
-    "main.js": "/Portfolio/static/js/main.b667329f.js",
-    "static/media/WaxyFotoItcho.jpg": "/Portfolio/static/media/WaxyFotoItcho.7176fc5785da99468ba0.jpg",
+    "main.css": "/Portfolio/static/css/main.8dadef41.css",
+    "main.js": "/Portfolio/static/js/main.cb76f6e6.js",
+    "static/media/RetrucoImage.png": "/Portfolio/static/media/RetrucoImage.55dc0b63e97cb067ef2e.png",
+    "static/media/MiniaturaWaxy.jpg": "/Portfolio/static/media/MiniaturaWaxy.df4438b3fdbd1fa6aea0.jpg",
     "static/media/robotpalooza_image.jpg": "/Portfolio/static/media/robotpalooza_image.43379fd92e7b90f2eab5.jpg",
+    "static/media/OneStepImage.png": "/Portfolio/static/media/OneStepImage.22da41a947d8432e72b7.png",
     "static/media/image-portfolio.jpg": "/Portfolio/static/media/image-portfolio.050cb2e83d58f393d304.jpg",
     "static/media/banner.png": "/Portfolio/static/media/banner.329e895c162000cf5379.png",
     "index.html": "/Portfolio/index.html",
-    "main.06392dfa.css.map": "/Portfolio/static/css/main.06392dfa.css.map",
-    "main.b667329f.js.map": "/Portfolio/static/js/main.b667329f.js.map"
+    "main.8dadef41.css.map": "/Portfolio/static/css/main.8dadef41.css.map",
+    "main.cb76f6e6.js.map": "/Portfolio/static/js/main.cb76f6e6.js.map"
   },
   "entrypoints": [
-    "static/css/main.06392dfa.css",
-    "static/js/main.b667329f.js"
+    "static/css/main.8dadef41.css",
+    "static/js/main.cb76f6e6.js"
   ]
 }
