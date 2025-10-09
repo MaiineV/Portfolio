@@ -57,8 +57,7 @@ const Home = () => {
           <div className={classes.home__resume}>
             <p>
               Graduated game developer with expertise in <strong>Unity C#</strong> and <strong>Unreal C++</strong>, 
-              currently seeking new challenges and opportunities! Skilled in Game Design, Level Design, 
-              Full-Stack Development, and Production.
+              currently seeking new challenges and opportunities! Skilled in Game Design as a Technical Game Designer.
             </p>
           </div>
           

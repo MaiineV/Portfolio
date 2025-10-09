@@ -3,22 +3,11 @@ import classes from "../styles/Portfolio.module.scss";
 
 import robotpaloozaImage from "../images/robotpalooza_image.jpg";
 import sawiImage from "../images/banner.png";
-import aoeImage from "../images/aoe_image.png";
+import waxyImage from "../images/MiniaturaWaxy.jpg";
+import retrucoImage from "../images/RetrucoImage.png";
+import oneStepImage from "../images/OneStepImage.png";
 
 const projects = [
-  {
-    id: 1,
-    title: "Robotpalooza",
-    description:
-      "Frenetic FPS made in Unity. Showcased at EVA 2023. I worked on the game's programming, game design and level design.",
-    image: robotpaloozaImage,
-    viewLink: "https://burntcones.itch.io/robotpalooza",
-    codeLink: "https://github.com/TheSirYeti/ProjectFeverDream",
-    categories: ["Game Development", "Game Design"],
-    technologies: ["Unity", "C#", "Game Design", "Level Design"],
-    status: "Released",
-    featured: true,
-  },
   {
     id: 2,
     title: "Sawi, The Void Buster",
@@ -27,22 +16,70 @@ const projects = [
     image: sawiImage,
     viewLink: "https://mvg-games.com.ar/game/sawi",
     codeLink: "https://github.com/MaiineV",
+    gddLink: "", // Add your GDD link here when available
     categories: ["Game Development", "Game Design"],
-    technologies: ["Godot", "Game Design", "Level Design", "2D"],
+    technologies: ["Godot", "2D"],
     status: "In Development",
     featured: true,
   },
   {
     id: 3,
-    title: "AI of Age of Empires",
+    title: "Waxy: The Wick and the Witch",
     description:
-      "AI prototype using Theta Star and state machines for intelligent unit behavior and pathfinding.",
-    image: aoeImage,
-    viewLink: "",
-    codeLink: "https://github.com/MaiineV/AOE-AI",
-    categories: ["AI Development"],
-    technologies: ["C++", "AI", "Pathfinding", "State Machines"],
+      "Waxy: The Wick and the Witch is a third-person 3D puzzle-platformer where you play as a living candle exploring the forgotten attic of a witch’s house.",
+    image: waxyImage,
+    viewLink: "https://3amgamesstudio.itch.io/waxy-the-wick-and-the-witch",
+    codeLink: "",
+    gddLink:
+      "https://docs.google.com/document/d/1skRFyi93VuhgQmpYGfLQ1OmZlOqO3887zhP5It__0OI/edit?usp=sharing", // Add your GDD link here when available
+    categories: ["Game Development", "Game Design"],
+    technologies: ["C#", "Unity"],
+    status: "In Development",
+    featured: true,
+  },
+  {
+    id: 5,
+    title: "One Step Behind",
+    description:
+      "One Step Behind is an incremental-Bullethell game with some metroidvania mechanics, with the unique mechanic that you have to fight with your pass life side by side.",
+    image: oneStepImage,
+    viewLink: "https://andres-pittaluga.itch.io/one-step-behind",
+    codeLink: "",
+    gddLink:
+      "https://miro.com/app/board/uXjVJFkucr0=/?share_link_id=695560825167", // Add your GDD link here when available
+    categories: ["Game Design", "Game Development"],
+    technologies: ["C#", "Unity"],
+    status: "In Development",
+    featured: true,
+  },
+  {
+    id: 4,
+    title: "Retruco al Diablo",
+    description:
+      "Retruco al diablo is a card game with single match, special ability and a complex lie system.",
+    image: retrucoImage,
+    viewLink: "https://youtu.be/ntMhAfiPFYE",
+    codeLink: "",
+    gddLink:
+      "https://docs.google.com/document/d/1nrsUY1v7X4N-dKN-YiLq7TMPnyXFkkjbknu9BOc9qPk/edit?usp=sharing", // Add your GDD link here when available
+    categories: ["Game Design"],
+    technologies: ["C#", "Unity"],
     status: "Prototype",
+    featured: false,
+  },
+  {
+    id: 1,
+    title: "Robotpalooza",
+    description:
+      "Frenetic FPS made in Unity. Showcased at EVA 2023. I worked on the game's programming, game design and level design.",
+    image: robotpaloozaImage,
+    viewLink: "https://burntcones.itch.io/robotpalooza",
+    codeLink: "https://github.com/TheSirYeti/ProjectFeverDream",
+    gddLink:
+      "https://docs.google.com/document/d/1bFFF-2n0IrftEVJ7uQ_9-dTtN_R2T2Wtoc3uTwaIJCc/edit?usp=sharing", // Add your GDD link here when available
+    categories: ["Game Development", "Game Design"],
+    technologies: ["Unity", "C#", "Game Design", "Level Design"],
+    status: "Released",
     featured: false,
   },
 ];
@@ -173,15 +210,28 @@ const Portfolio = () => {
                   <span>View Project</span>
                 </a>
               )}
-              <a
-                href={project.codeLink}
-                target="_blank"
-                rel="noreferrer"
-                className={`${classes.portfolio__button} ${classes.portfolio__button__secondary}`}
-              >
-                <span className={classes.portfolio__button__icon}>💻</span>
-                <span>View Code</span>
-              </a>
+              {project.gddLink && (
+                <a
+                  href={project.gddLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`${classes.portfolio__button} ${classes.portfolio__button__secondary}`}
+                >
+                  <span className={classes.portfolio__button__icon}>📄</span>
+                  <span>View GDD</span>
+                </a>
+              )}
+              {project.codeLink && (
+                <a
+                  href={project.codeLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`${classes.portfolio__button} ${classes.portfolio__button__secondary}`}
+                >
+                  <span className={classes.portfolio__button__icon}>💻</span>
+                  <span>View Code</span>
+                </a>
+              )}
             </div>
 
             <div
