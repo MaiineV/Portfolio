@@ -1,6 +1,6 @@
 {
-  "short_name": "Ignacio Martinez Portfolio",
-  "name": "Create React App Sample",
+  "short_name": "Ignacio Martinez",
+  "name": "Ignacio Martinez — Portfolio",
   "icons": [
     {
       "src": "coding-logo.png",
@@ -18,8 +18,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/Portfolio/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#CA6166",
+  "background_color": "#EDBAA6"
 }
