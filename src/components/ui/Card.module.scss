@@ -1,0 +1,12 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+.card {
+  @include m.card-surface;
+  padding: t.$space-5;
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-3;
+
+  &:hover { @include m.card-hover; }
+}

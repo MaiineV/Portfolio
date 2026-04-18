@@ -1,0 +1,104 @@
+@use 'tokens' as t;
+
+// Accessible focus ring used by every interactive element.
+@mixin focus-ring {
+  outline: 2px solid t.$primary-500;
+  outline-offset: 2px;
+  border-radius: t.$radius-sm;
+}
+
+// Page backdrop — peach surface, no gradients.
+@mixin page-bg {
+  background: t.$surface-bg;
+  min-height: calc(100vh - 80px);
+}
+
+// Constrained container.
+@mixin container($width: t.$container-base) {
+  width: 100%;
+  max-width: $width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: t.$space-5;
+  padding-right: t.$space-5;
+}
+
+// Card surface — neutral, low-contrast shadow, hover lift only.
+@mixin card-surface {
+  background: t.$surface-0;
+  border: 1px solid t.$border-subtle;
+  border-radius: t.$radius-md;
+  box-shadow: t.$shadow-sm;
+  transition: box-shadow t.$duration-base t.$easing-standard,
+              transform t.$duration-base t.$easing-standard,
+              border-color t.$duration-base t.$easing-standard;
+}
+
+@mixin card-hover {
+  box-shadow: t.$shadow-md;
+  transform: translateY(-2px);
+  border-color: t.$primary-100;
+}
+
+// Button — primary brand action.
+@mixin btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: t.$space-2;
+  padding: t.$space-3 t.$space-5;
+  font-family: t.$font-body;
+  font-size: t.$fs-md;
+  font-weight: t.$fw-semibold;
+  background: t.$primary-500;
+  color: t.$text-on-brand;
+  border: 1px solid t.$primary-500;
+  border-radius: t.$radius-md;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background t.$duration-base t.$easing-standard,
+              border-color t.$duration-base t.$easing-standard;
+
+  &:hover { background: t.$primary-700; border-color: t.$primary-700; }
+  &:focus-visible { @include focus-ring; }
+}
+
+@mixin btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: t.$space-2;
+  padding: t.$space-3 t.$space-5;
+  font-family: t.$font-body;
+  font-size: t.$fs-md;
+  font-weight: t.$fw-semibold;
+  background: transparent;
+  color: t.$primary-700;
+  border: 1px solid t.$primary-300;
+  border-radius: t.$radius-md;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background t.$duration-base t.$easing-standard,
+              color t.$duration-base t.$easing-standard;
+
+  &:hover { background: t.$primary-50; color: t.$primary-900; }
+  &:focus-visible { @include focus-ring; }
+}
+
+// Section heading typography pair.
+@mixin section-title {
+  font-family: t.$font-display;
+  font-size: t.$fs-3xl;
+  font-weight: t.$fw-bold;
+  line-height: t.$lh-tight;
+  color: t.$primary-700;
+  margin: 0;
+}
+
+@mixin section-subtitle {
+  font-family: t.$font-body;
+  font-size: t.$fs-lg;
+  color: t.$text-secondary;
+  max-width: 60ch;
+  margin: t.$space-3 0 0;
+}

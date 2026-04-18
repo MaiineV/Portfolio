@@ -1,0 +1,92 @@
+@use 'tokens' as t;
+@use 'mixins' as m;
+
+// ---------- Reset / base -----------------------------------------------------
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: t.$font-body;
+  font-size: t.$fs-md;
+  line-height: t.$lh-normal;
+  color: t.$text-primary;
+  background: t.$surface-bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a {
+  color: t.$text-link;
+  text-decoration: none;
+  transition: color t.$duration-fast t.$easing-standard;
+  &:hover { color: t.$primary-900; text-decoration: underline; }
+  &:focus-visible { @include m.focus-ring; }
+}
+
+button {
+  font-family: inherit;
+  &:focus-visible { @include m.focus-ring; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: t.$font-display;
+  color: t.$primary-700;
+  line-height: t.$lh-tight;
+  margin: 0 0 t.$space-3;
+}
+
+p { margin: 0 0 t.$space-3; }
+
+// ---------- Utilities --------------------------------------------------------
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: t.$space-3;
+  top: -100px;
+  background: t.$primary-500;
+  color: t.$text-on-brand;
+  padding: t.$space-3 t.$space-4;
+  border-radius: t.$radius-md;
+  font-weight: t.$fw-semibold;
+  z-index: 1000;
+  transition: top t.$duration-fast t.$easing-standard;
+  &:focus { top: t.$space-3; }
+}
+
+// ---------- Single canonical entry animation ---------------------------------
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  animation: fadeInUp t.$duration-base t.$easing-standard forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+// ---------- Reduced motion (single global block) ----------------------------
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

@@ -1,0 +1,45 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: t.$space-2;
+  margin: 0 auto t.$space-8;
+  max-width: t.$container-base;
+}
+
+.chip {
+  font-family: t.$font-body;
+  font-size: t.$fs-sm;
+  font-weight: t.$fw-semibold;
+  padding: t.$space-2 t.$space-4;
+  background: t.$surface-0;
+  color: t.$text-secondary;
+  border: 1px solid t.$border-subtle;
+  border-radius: t.$radius-pill;
+  cursor: pointer;
+  transition: background t.$duration-fast t.$easing-standard,
+              color t.$duration-fast t.$easing-standard,
+              border-color t.$duration-fast t.$easing-standard;
+
+  &:hover {
+    color: t.$primary-700;
+    border-color: t.$primary-300;
+  }
+
+  &:focus-visible { @include m.focus-ring; }
+}
+
+.chipActive {
+  background: t.$primary-500;
+  color: t.$text-on-brand;
+  border-color: t.$primary-500;
+
+  &:hover {
+    background: t.$primary-700;
+    color: t.$text-on-brand;
+    border-color: t.$primary-700;
+  }
+}

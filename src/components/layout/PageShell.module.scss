@@ -1,0 +1,25 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+.shell {
+  @include m.page-bg;
+  padding: t.$space-10 0 t.$space-12;
+  outline: none;
+  animation: fadeInUp t.$duration-base t.$easing-standard;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: t.$space-5;
+  padding-right: t.$space-5;
+}
+
+.narrow { max-width: t.$container-narrow; }
+.base   { max-width: t.$container-base; }
+.wide   { max-width: t.$container-wide; }
+
+@media (max-width: t.$bp-md) {
+  .shell { padding: t.$space-6 0 t.$space-10; }
+}
