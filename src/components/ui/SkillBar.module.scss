@@ -1,0 +1,76 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+.row {
+  @include m.card-surface;
+  padding: t.$space-4;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'head head'
+    'desc desc'
+    'track percent';
+  gap: t.$space-2;
+}
+
+.head {
+  grid-area: head;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: t.$space-3;
+}
+
+.name {
+  font-family: t.$font-body;
+  font-weight: t.$fw-bold;
+  color: t.$text-primary;
+}
+
+.badge {
+  font-size: t.$fs-xs;
+  font-weight: t.$fw-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px t.$space-2;
+  background: t.$primary-50;
+  color: t.$primary-700;
+  border-radius: t.$radius-pill;
+}
+
+.desc {
+  grid-area: desc;
+  font-size: t.$fs-sm;
+  color: t.$text-secondary;
+  margin: 0;
+}
+
+.track {
+  grid-area: track;
+  height: 6px;
+  background: t.$neutral-100;
+  border-radius: t.$radius-pill;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: var(--width, 0%);
+  background: linear-gradient(90deg, t.$primary-300, t.$primary-500);
+  border-radius: t.$radius-pill;
+  transform-origin: left;
+  animation: grow t.$duration-base t.$easing-standard forwards;
+}
+
+@keyframes grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.percent {
+  grid-area: percent;
+  font-size: t.$fs-sm;
+  font-weight: t.$fw-semibold;
+  color: t.$text-secondary;
+  align-self: center;
+}

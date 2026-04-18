@@ -1,0 +1,100 @@
+// =============================================================================
+// Design tokens — single source of truth for the design system.
+// Loaded once in globals.scss; consumed via @use 'tokens' as t;
+// =============================================================================
+
+// ---------- Typography -------------------------------------------------------
+$font-display: "Lemonada", "Georgia", serif;
+$font-body:    "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+$fs-xs:  0.75rem;     // 12
+$fs-sm:  0.875rem;    // 14
+$fs-md:  1rem;        // 16
+$fs-lg:  1.125rem;    // 18
+$fs-xl:  1.5rem;      // 24
+$fs-2xl: 2rem;        // 32
+$fs-3xl: 2.5rem;      // 40
+$fs-4xl: 3.25rem;     // 52
+
+$fw-regular:  400;
+$fw-semibold: 600;
+$fw-bold:     700;
+
+$lh-tight:  1.2;
+$lh-normal: 1.55;
+
+// ---------- Palette (warm, identity preserved) -------------------------------
+// Primary = rose/magenta family. Surface = peach. Accent = orange (sparingly).
+$primary-50:  #FBE9E9;
+$primary-100: #F5C6C6;
+$primary-300: #E08F92;
+$primary-500: #CA6166;   // brand main
+$primary-700: #9D2053;   // brand deep — link/header text
+$primary-900: #5E1230;
+
+$accent-500:  #D48032;   // warm orange — featured / highlight only
+
+$surface-bg:  #EDBAA6;   // peach — page backdrop
+$surface-0:   #FFFFFF;   // cards
+$surface-1:   #FBF5F2;   // alt surface
+
+$neutral-50:  #FAFAFA;
+$neutral-100: #F4F4F5;
+$neutral-200: #E4E4E7;
+$neutral-300: #D4D4D8;
+$neutral-400: #A1A1AA;
+$neutral-600: #52525B;
+$neutral-800: #27272A;
+$neutral-900: #18181B;
+
+$text-primary:   $neutral-900;
+$text-secondary: $neutral-600;
+$text-on-brand:  #FFFFFF;
+$text-on-bg:     $primary-900;       // text directly over $surface-bg
+$text-link:      $primary-700;
+
+$border-subtle: $neutral-200;
+$border-strong: $neutral-300;
+
+// Status — uses palette, distinguished by label too (not color-only).
+$status-released:    $primary-500;
+$status-development: $accent-500;
+$status-prototype:   $neutral-400;
+
+// ---------- Spacing (4-px scale) ---------------------------------------------
+$space-1:  0.25rem;
+$space-2:  0.5rem;
+$space-3:  0.75rem;
+$space-4:  1rem;
+$space-5:  1.5rem;
+$space-6:  2rem;
+$space-8:  3rem;
+$space-10: 4rem;
+$space-12: 6rem;
+
+// ---------- Layout -----------------------------------------------------------
+$container-narrow: 720px;
+$container-base:   960px;
+$container-wide:   1200px;
+
+// ---------- Radius -----------------------------------------------------------
+$radius-sm:   6px;
+$radius-md:   10px;
+$radius-lg:   16px;
+$radius-pill: 999px;
+
+// ---------- Shadow (single subtle scale) -------------------------------------
+$shadow-sm: 0 1px 2px rgba(24, 24, 27, 0.06);
+$shadow-md: 0 4px 12px rgba(24, 24, 27, 0.08);
+$shadow-lg: 0 10px 24px rgba(24, 24, 27, 0.10);
+
+// ---------- Breakpoints ------------------------------------------------------
+$bp-sm: 640px;
+$bp-md: 800px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// ---------- Motion -----------------------------------------------------------
+$easing-standard: cubic-bezier(0.2, 0, 0, 1);
+$duration-fast:   150ms;
+$duration-base:   250ms;

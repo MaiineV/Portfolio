@@ -1,0 +1,61 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+.root { width: 100%; }
+
+.tablist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: t.$space-1;
+  padding: t.$space-1;
+  background: t.$surface-0;
+  border: 1px solid t.$border-subtle;
+  border-radius: t.$radius-md;
+  margin: 0 auto t.$space-6;
+  max-width: t.$container-base;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: t.$space-2;
+  padding: t.$space-2 t.$space-4;
+  font-family: t.$font-body;
+  font-size: t.$fs-sm;
+  font-weight: t.$fw-semibold;
+  color: t.$text-secondary;
+  background: transparent;
+  border: 0;
+  border-radius: t.$radius-sm;
+  cursor: pointer;
+  transition: background t.$duration-fast t.$easing-standard,
+              color t.$duration-fast t.$easing-standard;
+
+  &:hover { color: t.$primary-700; background: t.$primary-50; }
+  &:focus-visible { @include m.focus-ring; outline-offset: -2px; }
+}
+
+.tabActive {
+  color: t.$text-on-brand;
+  background: t.$primary-500;
+
+  &:hover { background: t.$primary-700; color: t.$text-on-brand; }
+}
+
+.count {
+  font-size: t.$fs-xs;
+  font-weight: t.$fw-bold;
+  padding: 0 t.$space-2;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: t.$radius-pill;
+  min-width: 20px;
+  text-align: center;
+}
+
+.tab:not(.tabActive) .count {
+  background: t.$neutral-100;
+  color: t.$text-secondary;
+}
+
+.panel { outline: none; }

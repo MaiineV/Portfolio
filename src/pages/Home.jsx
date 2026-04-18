@@ -1,126 +1,69 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import classes from "../styles/Home.module.scss"
-import selfImage from "../images/image-portfolio.jpg"
+import { Link } from 'react-router-dom';
+import classes from '../styles/Home.module.scss';
+import selfImage from '../images/image-portfolio.jpg';
+import PageShell from '../components/layout/PageShell';
+import StatGrid from '../components/ui/StatGrid';
+import Icon from '../components/ui/Icon';
+import { routes } from '../routes';
 
-const Home = () => {
-  const quickActions = [
-    {
-      title: "View Projects",
-      description: "Check out my latest work",
-      link: "/projects",
-      icon: "🎮"
-    },
-    {
-      title: "My Skills", 
-      description: "Technical expertise overview",
-      link: "/skills",
-      icon: "💻"
-    },
-    {
-      title: "Experience",
-      description: "Professional journey",
-      link: "/experience", 
-      icon: "🚀"
-    },
-    {
-      title: "About Me",
-      description: "Get to know me better",
-      link: "/aboutme",
-      icon: "👨‍💻"
-    }
-  ];
+const explore = routes.filter((r) => r.path !== '/');
 
+const stats = [
+  { value: '3+',  label: 'Years Experience' },
+  { value: '15+', label: 'Technologies' },
+  { value: '5+',  label: 'Projects Completed' },
+];
+
+export default function Home() {
   return (
-    <div className={classes.home}>
-      {/* Hero Section */}
-      <div className={classes.home__hero}>
-        <div className={classes.home__picture}>
-          <div className={classes.home__picture__wrapper}>
-            <img src={selfImage} alt="Ignacio Martinez - Game Developer" />
-            <div className={classes.home__picture__glow}></div>
-          </div>
+    <PageShell>
+      <section className={classes.hero}>
+        <div className={classes.portrait}>
+          <img src={selfImage} alt="Ignacio Martinez" />
         </div>
-        
-        <div className={classes.home__content}>
-          <div className={classes.home__greeting}>
-            <span className={classes.home__greeting__text}>Hello, I'm</span>
-          </div>
-          <div className={classes.home__name}>
-            <span className={classes.home__name__first}>Ignacio</span>
-            <span className={classes.home__name__last}>Martinez</span>
-          </div>
-          <div className={classes.home__title}>
-            <span className={classes.home__title__main}>Game Designer, Game Developer</span>
-            <span className={classes.home__title__sub}>& Full-Stack Engineer</span>
-          </div>
-          <div className={classes.home__resume}>
-            <p>
-              Graduated game developer with expertise in <strong>Unity C#</strong> and <strong>Unreal C++</strong>, 
-              currently seeking new challenges and opportunities! Skilled in Game Design as a Technical Game Designer.
-            </p>
-          </div>
-          
-          <div className={classes.home__cta}>
-            <Link to="/projects" className={classes.home__cta__primary}>
-              View My Work
+        <div className={classes.intro}>
+          <p className={classes.greeting}>Hello, I'm</p>
+          <h1 className={classes.name}>Ignacio Martinez</h1>
+          <p className={classes.role}>
+            Game Designer, Game Developer &amp; Full-Stack Engineer
+          </p>
+          <p className={classes.bio}>
+            Graduated game developer with expertise in <strong>Unity C#</strong> and{' '}
+            <strong>Unreal C++</strong>, currently seeking new challenges and opportunities. Skilled in
+            game design as a technical game designer.
+          </p>
+          <div className={classes.cta}>
+            <Link to="/projects" className={classes.ctaPrimary}>
+              View my work <Icon name="ArrowRight" size={16} />
             </Link>
-            <Link to="/aboutme" className={classes.home__cta__secondary}>
-              Learn More
+            <Link to="/aboutme" className={classes.ctaGhost}>
+              About me
             </Link>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Quick Actions Section */}
-      <div className={classes.home__section}>
-        <h2 className={classes.home__section__title}>Explore My Portfolio</h2>
-        <div className={classes.home__quickActions}>
-          {quickActions.map((action, index) => (
-            <Link 
-              key={index} 
-              to={action.link} 
-              className={classes.home__quickActions__card}
-              style={{'--delay': `${index * 0.1}s`}}
-            >
-              <div className={classes.home__quickActions__card__icon}>
-                {action.icon}
-              </div>
-              <div className={classes.home__quickActions__card__content}>
-                <h3 className={classes.home__quickActions__card__title}>
-                  {action.title}
-                </h3>
-                <p className={classes.home__quickActions__card__description}>
-                  {action.description}
-                </p>
-              </div>
-              <div className={classes.home__quickActions__card__arrow}>
-                →
-              </div>
-            </Link>
+      <section className={classes.section} aria-labelledby="explore-heading">
+        <h2 id="explore-heading" className={classes.sectionTitle}>Explore</h2>
+        <ul className={classes.cards}>
+          {explore.map((item) => (
+            <li key={item.path}>
+              <Link to={item.path} className={classes.card}>
+                <span className={classes.cardIcon}>
+                  <Icon name={item.icon} size={20} />
+                </span>
+                <span className={classes.cardTitle}>{item.label}</span>
+                <Icon name="ArrowRight" size={16} className={classes.cardArrow} />
+              </Link>
+            </li>
           ))}
-        </div>
-      </div>
+        </ul>
+      </section>
 
-      {/* Skills Highlight */}
-      <div className={classes.home__section}>
-        <div className={classes.home__highlights}>
-          <div className={classes.home__highlights__item}>
-            <div className={classes.home__highlights__number}>3+</div>
-            <div className={classes.home__highlights__label}>Years Experience</div>
-          </div>
-          <div className={classes.home__highlights__item}>
-            <div className={classes.home__highlights__number}>15+</div>
-            <div className={classes.home__highlights__label}>Technologies</div>
-          </div>
-          <div className={classes.home__highlights__item}>
-            <div className={classes.home__highlights__number}>5+</div>
-            <div className={classes.home__highlights__label}>Projects Completed</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+      <section className={classes.section} aria-labelledby="stats-heading">
+        <h2 id="stats-heading" className="sr-only">By the numbers</h2>
+        <StatGrid items={stats} />
+      </section>
+    </PageShell>
+  );
 }
-
-export default Home

@@ -1,0 +1,25 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+.header {
+  text-align: center;
+  margin: 0 auto t.$space-8;
+  padding: 0 t.$space-4;
+}
+
+.title {
+  @include m.section-title;
+  font-size: t.$fs-4xl;
+  margin: 0;
+
+  @media (max-width: t.$bp-md) {
+    font-size: t.$fs-3xl;
+  }
+}
+
+.subtitle {
+  @include m.section-subtitle;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

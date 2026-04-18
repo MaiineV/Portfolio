@@ -1,0 +1,130 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+.footer {
+  background: t.$neutral-900;
+  color: t.$neutral-100;
+  border-top: 1px solid t.$neutral-800;
+  padding: t.$space-10 0 0;
+}
+
+.container {
+  max-width: t.$container-wide;
+  margin: 0 auto;
+  padding: 0 t.$space-5;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: t.$space-8;
+
+  @media (max-width: t.$bp-md) {
+    grid-template-columns: 1fr;
+    gap: t.$space-6;
+  }
+}
+
+.brand { display: flex; flex-direction: column; gap: t.$space-3; }
+
+.brandRow {
+  display: inline-flex;
+  align-items: center;
+  gap: t.$space-2;
+  color: t.$neutral-50;
+  text-decoration: none;
+  &:hover { color: t.$primary-300; text-decoration: none; }
+}
+
+.brandMark {
+  font-family: t.$font-body;
+  font-size: t.$fs-sm;
+  color: t.$primary-300;
+  padding: 2px 6px;
+  border: 1px solid t.$neutral-600;
+  border-radius: t.$radius-sm;
+}
+
+.brandName {
+  font-family: t.$font-display;
+  font-size: t.$fs-lg;
+  font-weight: t.$fw-bold;
+}
+
+.tagline {
+  color: t.$neutral-400;
+  margin: 0;
+  max-width: 36ch;
+}
+
+.social {
+  display: flex;
+  gap: t.$space-2;
+  margin-top: t.$space-2;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: t.$radius-sm;
+  border: 1px solid t.$neutral-800;
+  color: t.$neutral-100;
+  background: transparent;
+  transition: background t.$duration-fast t.$easing-standard,
+              color t.$duration-fast t.$easing-standard,
+              border-color t.$duration-fast t.$easing-standard;
+
+  &:hover {
+    color: t.$primary-300;
+    border-color: t.$primary-300;
+    background: rgba(255, 255, 255, 0.04);
+    text-decoration: none;
+  }
+  &:focus-visible { @include m.focus-ring; }
+}
+
+.section { display: flex; flex-direction: column; gap: t.$space-3; }
+
+.sectionTitle {
+  font-family: t.$font-body;
+  font-size: t.$fs-sm;
+  font-weight: t.$fw-bold;
+  color: t.$neutral-50;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.linkList,
+.contactList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-2;
+  color: t.$neutral-400;
+}
+
+.contactList li {
+  display: inline-flex;
+  align-items: center;
+  gap: t.$space-2;
+}
+
+.link {
+  color: t.$neutral-100;
+  text-decoration: none;
+  &:hover { color: t.$primary-300; text-decoration: underline; }
+}
+
+.statusDot { color: #4ade80; fill: #4ade80; }
+
+.bottom {
+  border-top: 1px solid t.$neutral-800;
+  padding: t.$space-4 t.$space-5;
+  text-align: center;
+  color: t.$neutral-400;
+  font-size: t.$fs-sm;
+  margin-top: t.$space-8;
+}
