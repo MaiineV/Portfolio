@@ -2,9 +2,9 @@
 @use '../../styles/mixins' as m;
 
 .footer {
-  background: t.$neutral-900;
-  color: t.$neutral-100;
-  border-top: 1px solid t.$neutral-800;
+  background: t.$surface-sunken;
+  color: t.$text-primary;
+  border-top: 1px solid t.$border-subtle;
   padding: t.$space-10 0 0;
 }
 
@@ -28,7 +28,7 @@
   display: inline-flex;
   align-items: center;
   gap: t.$space-2;
-  color: t.$neutral-50;
+  color: t.$text-primary;
   text-decoration: none;
   &:hover { color: t.$primary-300; text-decoration: none; }
 }
@@ -38,7 +38,7 @@
   font-size: t.$fs-sm;
   color: t.$primary-300;
   padding: 2px 6px;
-  border: 1px solid t.$neutral-600;
+  border: 1px solid t.$border-subtle;
   border-radius: t.$radius-sm;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .tagline {
-  color: t.$neutral-400;
+  color: t.$text-secondary;
   margin: 0;
   max-width: 36ch;
 }
@@ -67,8 +67,8 @@
   width: 36px;
   height: 36px;
   border-radius: t.$radius-sm;
-  border: 1px solid t.$neutral-800;
-  color: t.$neutral-100;
+  border: 1px solid t.$border-subtle;
+  color: t.$text-secondary;
   background: transparent;
   transition: background t.$duration-fast t.$easing-standard,
               color t.$duration-fast t.$easing-standard,
@@ -89,7 +89,7 @@
   font-family: t.$font-body;
   font-size: t.$fs-sm;
   font-weight: t.$fw-bold;
-  color: t.$neutral-50;
+  color: t.$text-primary;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin: 0;
@@ -103,7 +103,7 @@
   display: flex;
   flex-direction: column;
   gap: t.$space-2;
-  color: t.$neutral-400;
+  color: t.$text-secondary;
 }
 
 .contactList li {
@@ -113,7 +113,7 @@
 }
 
 .link {
-  color: t.$neutral-100;
+  color: t.$text-secondary;
   text-decoration: none;
   &:hover { color: t.$primary-300; text-decoration: underline; }
 }
@@ -121,10 +121,10 @@
 .statusDot { color: #4ade80; fill: #4ade80; }
 
 .bottom {
-  border-top: 1px solid t.$neutral-800;
+  border-top: 1px solid t.$border-subtle;
   padding: t.$space-4 t.$space-5;
   text-align: center;
-  color: t.$neutral-400;
+  color: t.$text-secondary;
   font-size: t.$fs-sm;
   margin-top: t.$space-8;
 }

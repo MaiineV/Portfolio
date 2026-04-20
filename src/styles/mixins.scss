@@ -35,7 +35,7 @@
 }
 
 @mixin card-hover {
-  box-shadow: t.$shadow-md;
+  box-shadow: t.$shadow-md, 0 0 20px rgba(202, 97, 102, 0.08);
   transform: translateY(-2px);
   border-color: t.$primary-100;
 }
@@ -59,7 +59,7 @@
   transition: background t.$duration-base t.$easing-standard,
               border-color t.$duration-base t.$easing-standard;
 
-  &:hover { background: t.$primary-700; border-color: t.$primary-700; }
+  &:hover { background: #9D2053; border-color: #9D2053; }
   &:focus-visible { @include focus-ring; }
 }
 
