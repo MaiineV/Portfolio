@@ -25,6 +25,8 @@ export const skillsData = [
       { name: 'Python',       level: 80, description: 'Backend development and scripting' },
       { name: 'Flask',        level: 80, description: 'Python web microframework' },
       { name: 'SQLite',       level: 80, description: 'Embedded relational database' },
+      { name: 'PostgreSQL',   level: 80, description: 'Relational database management' },
+      { name: '.NET',         level: 70, description: 'C# backend framework' },
       { name: 'Node.js',      level: 70, description: 'Server-side JavaScript runtime' },
       { name: 'Django',       level: 60, description: 'Python web framework' },
       { name: 'Vue.js',       level: 50, description: 'Progressive web framework' },

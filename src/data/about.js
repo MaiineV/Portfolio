@@ -27,8 +27,8 @@ export const achievements = [
     description: 'Robotpalooza was featured at EVA 2023 gaming convention.',
   },
   {
-    title: 'GamesCom Latam Participant',
-    description: 'Pitched Sawi, The Void Buster at GamesCom Latam.',
+    title: 'GamesCom Latam 2025 & 2026',
+    description: 'Pitched Sawi, The Void Buster at GamesCom Latam 2025. Returning in 2026.',
   },
   {
     title: 'Professor at Two Universities',
