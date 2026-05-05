@@ -1,8 +1,8 @@
-import robotpaloozaImage from '../images/robotpalooza_image.jpg';
-import sawiImage from '../images/banner.png';
-import waxyImage from '../images/MiniaturaWaxy.jpg';
-import retrucoImage from '../images/RetrucoImage.png';
-import oneStepImage from '../images/OneStepImage.png';
+import robotpaloozaImage from '../images/robotpalooza_image.webp';
+import sawiImage from '../images/banner.webp';
+import waxyImage from '../images/MiniaturaWaxy.webp';
+import retrucoImage from '../images/RetrucoImage.webp';
+import oneStepImage from '../images/OneStepImage.webp';
 
 export const projects = [
   {

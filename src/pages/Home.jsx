@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import classes from '../styles/Home.module.scss';
-import selfImage from '../images/image-portfolio.jpg';
+import selfImage from '../images/image-portfolio.webp';
 import PageShell from '../components/layout/PageShell';
 import StatGrid from '../components/ui/StatGrid';
 import Icon from '../components/ui/Icon';
@@ -19,7 +19,7 @@ export default function Home() {
     <PageShell>
       <section className={classes.hero}>
         <div className={classes.portrait}>
-          <img src={selfImage} alt="Ignacio Martinez" />
+          <img src={selfImage} alt="Ignacio Martinez" width={240} height={240} />
         </div>
         <div className={classes.intro}>
           <p className={classes.greeting}>Hello, I'm</p>

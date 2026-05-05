@@ -21,6 +21,9 @@ function ProjectCard({ project }) {
           src={project.image}
           alt={project.title}
           loading="lazy"
+          decoding="async"
+          width={800}
+          height={450}
           className={classes.image}
         />
         {project.featured && (

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import classes from '../styles/AboutMe.module.scss';
-import selfImage from '../images/image-portfolio.jpg';
+import selfImage from '../images/image-portfolio.webp';
 import PageShell from '../components/layout/PageShell';
 import PageHeader from '../components/ui/PageHeader';
 import StatGrid from '../components/ui/StatGrid';
@@ -155,7 +155,7 @@ export default function AboutMe() {
 
       <section className={classes.hero}>
         <div className={classes.portrait}>
-          <img src={selfImage} alt="Ignacio Martinez" />
+          <img src={selfImage} alt="Ignacio Martinez" width={240} height={240} />
           <span className={classes.availability}>
             <span className={classes.availabilityDot} aria-hidden="true" />
             Available for hire

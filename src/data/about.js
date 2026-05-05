@@ -3,7 +3,7 @@ export const education = [
     year: 'Current',
     degree: 'Degree in Video Game Development',
     school: 'UADE',
-    note: 'Focus on Game Design & Producer',
+    note: '3rd year in progress — Focus on Game Design & Production',
     status: 'in-progress',
   },
   {
