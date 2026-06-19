@@ -23,39 +23,45 @@ export const certifications = [
 
 export const achievements = [
   {
+    title: 'Full-Stack Delivery',
+    description: 'Shipped web apps end to end with React, TypeScript, Node.js and C#/.NET across business, healthcare and real-time products.',
+  },
+  {
+    title: 'AI Dev Tooling',
+    description: 'Co-developed claude-code-arcane, a framework that extends Claude Code with custom skills, agents, automations and spec-driven development.',
+  },
+  {
+    title: 'Professor at Two Universities',
+    description: 'Teaching programming, algorithms, software architecture and backend at DaVinci and UADE.',
+  },
+  {
     title: 'Game Showcased at EVA 2023',
-    description: 'Robotpalooza was featured at EVA 2023 gaming convention.',
+    description: 'Robotpalooza was featured at the EVA 2023 gaming convention.',
   },
   {
     title: 'GamesCom Latam 2025 & 2026',
     description: 'Pitched Sawi, The Void Buster at GamesCom Latam 2025. Returning in 2026.',
   },
-  {
-    title: 'Professor at Two Universities',
-    description: 'Teaching game development at DaVinci and UADE.',
-  },
-  {
-    title: 'Full-Stack Expertise',
-    description: 'Proficient in both game and web development.',
-  },
 ];
 
 export const personalFacts = [
   { category: 'Coding Journey', fact: 'Started programming at age 16 with Python.' },
-  { category: 'Game Dev Passion', fact: 'Developed 15+ game prototypes in the last 3 years.' },
-  { category: 'Teaching', fact: 'Mentored over 100 students in game development.' },
+  { category: 'Full-Stack Builder', fact: 'Build features end to end, from the React UI to the API and the database.' },
+  { category: 'AI & Automation', fact: 'Use AI tooling and spec-driven development to automate work and ship faster.' },
+  { category: 'Teaching', fact: 'Mentored 100+ students in programming and software fundamentals.' },
+  { category: 'Game Dev Passion', fact: 'Built 15+ game prototypes, which sharpened my real-time and performance skills.' },
   { category: 'Problem Solver', fact: 'Can debug code for hours without getting frustrated.' },
 ];
 
 export const interests = [
-  'Game Design Theory',
+  'Web Development',
+  'Software Architecture',
   'AI Development',
-  'Level Design',
+  'Developer Tooling',
   'UI/UX Design',
-  '3D Modeling',
-  'Music Production',
-  'Indie Game Development',
+  'Game Design',
   'Teaching & Mentoring',
+  'Music Production',
 ];
 
 export const workStyleTraits = [

@@ -3,8 +3,23 @@ import sawiImage from '../images/banner.webp';
 import waxyImage from '../images/MiniaturaWaxy.webp';
 import retrucoImage from '../images/RetrucoImage.webp';
 import oneStepImage from '../images/OneStepImage.webp';
+import arcaneImage from '../images/claude-arcane.svg';
 
 export const projects = [
+  {
+    id: 6,
+    title: 'claude-code-arcane',
+    description:
+      'A collaborative framework that extends and optimizes the Claude Code AI dev environment: custom skills, AI agents, automation hooks, and spec-driven development (SDD) workflows.',
+    image: arcaneImage,
+    viewLink: '',
+    codeLink: 'https://github.com/SebastianLuser/claude-code-arcane',
+    gddLink: '',
+    categories: ['FullStack', 'AI'],
+    technologies: ['Claude Code', 'SDD', 'Automation', 'Agents'],
+    status: 'In Development',
+    featured: true,
+  },
   {
     id: 2,
     title: 'Sawi, The Void Buster',
@@ -80,4 +95,4 @@ export const projects = [
   },
 ];
 
-export const projectCategories = ['All', 'Game Development', 'Game Design', 'FullStack'];
+export const projectCategories = ['All', 'FullStack', 'AI', 'Game Development', 'Game Design'];

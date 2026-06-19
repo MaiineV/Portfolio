@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="claude-code-arcane">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2A1D16"/>
+      <stop offset="1" stop-color="#16100D"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="46%" r="42%">
+      <stop offset="0" stop-color="#D97757" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#D97757" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#glow)"/>
+  <g stroke="#D97757" stroke-width="15" stroke-linecap="round">
+    <line x1="400" y1="205" x2="495" y2="205"/>
+    <line x1="400" y1="205" x2="462" y2="241"/>
+    <line x1="400" y1="205" x2="448" y2="287"/>
+    <line x1="400" y1="205" x2="400" y2="277"/>
+    <line x1="400" y1="205" x2="352" y2="287"/>
+    <line x1="400" y1="205" x2="338" y2="241"/>
+    <line x1="400" y1="205" x2="305" y2="205"/>
+    <line x1="400" y1="205" x2="338" y2="169"/>
+    <line x1="400" y1="205" x2="352" y2="123"/>
+    <line x1="400" y1="205" x2="400" y2="133"/>
+    <line x1="400" y1="205" x2="448" y2="123"/>
+    <line x1="400" y1="205" x2="462" y2="169"/>
+  </g>
+  <text x="400" y="360" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" font-weight="700" fill="#EDE6DD">claude-code-arcane</text>
+  <text x="400" y="392" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="19" fill="#B89B8C">AI dev tooling · skills · agents · SDD</text>
+</svg>

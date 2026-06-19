@@ -19,7 +19,7 @@ import {
 import { contact } from '../data/contact';
 
 const heroStats = [
-  { value: '3+',   label: 'Years Experience' },
+  { value: '4+',   label: 'Years Experience' },
   { value: '100+', label: 'Students Taught' },
   { value: '15+',  label: 'Projects Built' },
 ];
@@ -30,9 +30,9 @@ function Overview() {
       <section>
         <h3 className={classes.h3}>My mission</h3>
         <p>
-          To create engaging and innovative gaming experiences while sharing knowledge with the
-          next generation of developers. I believe in the power of games to tell stories, solve
-          problems, and bring people together.
+          To build software that people actually enjoy using, owning features end to end from the
+          UI to the API and the database, while sharing knowledge with the next generation of
+          developers. I care about clean architecture, performance, and shipping.
         </p>
       </section>
 
@@ -165,9 +165,10 @@ export default function AboutMe() {
           <p className={classes.greeting}>Hello, I'm</p>
           <h2 className={classes.name}>Ignacio Martinez</h2>
           <p className={classes.bio}>
-            FullStack Developer specialized in Game Development with a strong background in Game
-            Design and Level Design. Currently working as a professor while seeking new challenges
-            in the gaming industry.
+            Full-Stack Developer building web applications end to end with React, TypeScript,
+            Node.js and C#/.NET. Strong CS fundamentals from teaching at two universities, plus a
+            real-time and game dev background (Unity, Unreal) as a differentiator. Open to
+            full-stack and frontend roles.
           </p>
           <StatGrid items={heroStats} />
         </div>

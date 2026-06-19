@@ -9,7 +9,7 @@ import { routes } from '../routes';
 const explore = routes.filter((r) => r.path !== '/');
 
 const stats = [
-  { value: '3+',  label: 'Years Experience' },
+  { value: '4+',  label: 'Years Experience' },
   { value: '15+', label: 'Technologies' },
   { value: '5+',  label: 'Projects Completed' },
 ];
@@ -25,12 +25,13 @@ export default function Home() {
           <p className={classes.greeting}>Hello, I'm</p>
           <h1 className={classes.name}>Ignacio Martinez</h1>
           <p className={classes.role}>
-            Game Designer, Game Developer &amp; Full-Stack Engineer
+            Full-Stack Developer · React · TypeScript · Node.js · C#/.NET · Game Dev
           </p>
           <p className={classes.bio}>
-            Graduated game developer with expertise in <strong>Unity C#</strong> and{' '}
-            <strong>Unreal C++</strong>, currently seeking new challenges and opportunities. Skilled in
-            game design as a technical game designer.
+            I build web applications end to end with <strong>React</strong>,{' '}
+            <strong>TypeScript</strong>, Node.js and C#/.NET. My real-time and game background
+            (<strong>Unity C#</strong>, <strong>Unreal C++</strong>) makes me obsessive about
+            performance. Open to full-stack and frontend roles.
           </p>
           <div className={classes.cta}>
             <Link to="/projects" className={classes.ctaPrimary}>
