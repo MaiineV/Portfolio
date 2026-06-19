@@ -68,16 +68,23 @@ p { margin: 0 0 t.$space-3; }
   &:focus { top: t.$space-3; }
 }
 
+.empty-state {
+  text-align: center;
+  color: t.$text-secondary;
+  padding: t.$space-8 t.$space-4;
+}
+
+.route-fallback {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  color: t.$text-secondary;
+}
+
 // ---------- Single canonical entry animation ---------------------------------
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-
-.reveal {
-  opacity: 0;
-  animation: fadeInUp t.$duration-base t.$easing-standard forwards;
-  animation-delay: var(--delay, 0ms);
 }
 
 // ---------- Reduced motion (single global block) ----------------------------
@@ -88,5 +95,4 @@ p { margin: 0 0 t.$space-3; }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal { opacity: 1; transform: none; }
 }

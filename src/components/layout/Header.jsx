@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import classes from './Header.module.scss';
 import { routes } from '../../routes';
@@ -8,6 +8,8 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const toggleRef = useRef(null);
+  const drawerRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -22,12 +24,37 @@ export default function Header() {
 
   useEffect(() => {
     if (!open) return;
+    const toggle = toggleRef.current;
     document.body.style.overflow = 'hidden';
-    const onKey = (e) => { if (e.key === 'Escape') setOpen(false); };
+
+    const drawer = drawerRef.current;
+    const focusables = drawer
+      ? Array.from(drawer.querySelectorAll('a[href], button:not([disabled])'))
+      : [];
+    focusables[0]?.focus();
+
+    const onKey = (e) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+        return;
+      }
+      if (e.key === 'Tab' && focusables.length) {
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
     document.addEventListener('keydown', onKey);
     return () => {
       document.body.style.overflow = '';
       document.removeEventListener('keydown', onKey);
+      toggle?.focus();
     };
   }, [open]);
 
@@ -62,6 +89,7 @@ export default function Header() {
           </ul>
 
           <button
+            ref={toggleRef}
             type="button"
             className={classes.toggle}
             onClick={() => setOpen((v) => !v)}
@@ -80,10 +108,11 @@ export default function Header() {
         />
 
         <div
+          ref={drawerRef}
           id="mobile-menu"
           className={`${classes.drawer} ${open ? classes.drawerOpen : ''}`}
           role="dialog"
-          aria-modal={open}
+          aria-modal={open || undefined}
           aria-label="Site menu"
           inert={open ? undefined : ''}
         >

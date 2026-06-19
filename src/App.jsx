@@ -15,7 +15,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <Suspense fallback={null}>
+      <Suspense fallback={<div className="route-fallback" role="status" aria-label="Loading">Loading…</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Portfolio />} />

@@ -6,9 +6,11 @@ import FilterChips from '../components/ui/FilterChips';
 import StatGrid from '../components/ui/StatGrid';
 import Icon from '../components/ui/Icon';
 import { projects, projectCategories } from '../data/projects';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 const STATUS_VARIANT = {
   Released:        'released',
+  Live:            'released',
   'In Development': 'development',
   Prototype:       'prototype',
 };
@@ -96,6 +98,7 @@ function ProjectCard({ project }) {
 }
 
 export default function Portfolio() {
+  useDocumentTitle('Projects');
   const [category, setCategory] = useState('All');
 
   const filtered = useMemo(
@@ -123,13 +126,17 @@ export default function Portfolio() {
         label="Project category"
       />
 
-      <ul className={classes.grid}>
-        {filtered.map((p) => (
-          <li key={p.id}>
-            <ProjectCard project={p} />
-          </li>
-        ))}
-      </ul>
+      {filtered.length === 0 ? (
+        <p className="empty-state">No projects in this category yet.</p>
+      ) : (
+        <ul className={classes.grid}>
+          {filtered.map((p) => (
+            <li key={p.id}>
+              <ProjectCard project={p} />
+            </li>
+          ))}
+        </ul>
+      )}
 
       <div className={classes.statsBlock}>
         <StatGrid items={stats} />

@@ -5,6 +5,7 @@ import PageShell from '../components/layout/PageShell';
 import StatGrid from '../components/ui/StatGrid';
 import Icon from '../components/ui/Icon';
 import { routes } from '../routes';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 const explore = routes.filter((r) => r.path !== '/');
 
@@ -15,6 +16,7 @@ const stats = [
 ];
 
 export default function Home() {
+  useDocumentTitle('Full-Stack Developer');
   return (
     <PageShell>
       <section className={classes.hero}>

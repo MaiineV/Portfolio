@@ -6,6 +6,7 @@ import StatGrid from '../components/ui/StatGrid';
 import Tabs from '../components/ui/Tabs';
 import SkillBar from '../components/ui/SkillBar';
 import { skillsData, skillLevelText, computeOverallStats } from '../data/skills';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 const overall = computeOverallStats(skillsData);
 const stats = [
@@ -23,6 +24,7 @@ const tabs = skillsData.map((cat) => ({
 }));
 
 export default function Skills() {
+  useDocumentTitle('Skills');
   const [activeId, setActiveId] = useState(skillsData[0].category);
   const active = skillsData.find((c) => c.category === activeId) || skillsData[0];
 

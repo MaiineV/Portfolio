@@ -1,4 +1,4 @@
-import { useId } from 'react';
+import { useId, useRef } from 'react';
 import classes from './Tabs.module.scss';
 import Icon from './Icon';
 
@@ -8,6 +8,7 @@ import Icon from './Icon';
 // children: render-prop receiving (activeId)
 export default function Tabs({ tabs, activeId, onChange, label = 'Tabs', children }) {
   const baseId = useId();
+  const tabRefs = useRef([]);
 
   function handleKey(e, idx) {
     if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft' && e.key !== 'Home' && e.key !== 'End') return;
@@ -18,8 +19,7 @@ export default function Tabs({ tabs, activeId, onChange, label = 'Tabs', childre
     if (e.key === 'Home') next = 0;
     if (e.key === 'End') next = tabs.length - 1;
     onChange(tabs[next].id);
-    const btn = document.getElementById(`${baseId}-tab-${tabs[next].id}`);
-    btn?.focus();
+    tabRefs.current[next]?.focus();
   }
 
   return (
@@ -30,6 +30,7 @@ export default function Tabs({ tabs, activeId, onChange, label = 'Tabs', childre
           return (
             <button
               key={tab.id}
+              ref={(el) => { tabRefs.current[idx] = el; }}
               id={`${baseId}-tab-${tab.id}`}
               role="tab"
               type="button"

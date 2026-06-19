@@ -6,6 +6,7 @@ import StatGrid from '../components/ui/StatGrid';
 import FilterChips from '../components/ui/FilterChips';
 import Icon from '../components/ui/Icon';
 import { experiences, jobTypes, computeExperienceStats } from '../data/experiences';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 function ExperienceItem({ exp }) {
   return (
@@ -53,6 +54,7 @@ function ExperienceItem({ exp }) {
 }
 
 export default function WorkExperience() {
+  useDocumentTitle('Experience');
   const [type, setType] = useState('All');
   const filtered = useMemo(
     () => (type === 'All' ? experiences : experiences.filter((e) => e.type === type)),
@@ -79,11 +81,15 @@ export default function WorkExperience() {
 
       <FilterChips items={jobTypes} value={type} onChange={setType} label="Job type" />
 
-      <ol className={classes.timeline}>
-        {filtered.map((exp) => (
-          <ExperienceItem key={exp.id} exp={exp} />
-        ))}
-      </ol>
+      {filtered.length === 0 ? (
+        <p className="empty-state">No roles in this category yet.</p>
+      ) : (
+        <ol className={classes.timeline}>
+          {filtered.map((exp) => (
+            <ExperienceItem key={exp.id} exp={exp} />
+          ))}
+        </ol>
+      )}
     </PageShell>
   );
 }

@@ -17,6 +17,7 @@ import {
   aboutTabs,
 } from '../data/about';
 import { contact } from '../data/contact';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 const heroStats = [
   { value: '4+',   label: 'Years Experience' },
@@ -144,6 +145,7 @@ const PANELS = {
 };
 
 export default function AboutMe() {
+  useDocumentTitle('About');
   const [activeId, setActiveId] = useState('overview');
 
   return (
