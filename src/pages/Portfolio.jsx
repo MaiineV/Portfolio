@@ -88,7 +88,18 @@ function ProjectCard({ project }) {
               className={classes.actionGhost}
             >
               <Icon name="Github" size={14} />
-              Code
+              {project.backendLink ? 'Frontend' : 'Code'}
+            </a>
+          )}
+          {project.backendLink && (
+            <a
+              href={project.backendLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={classes.actionGhost}
+            >
+              <Icon name="Server" size={14} />
+              Backend
             </a>
           )}
         </div>

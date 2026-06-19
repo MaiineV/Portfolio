@@ -17,6 +17,7 @@ export const projects = [
     image: warehouseImage,
     viewLink: '',
     codeLink: 'https://github.com/MaiineV/warehouse-frontend',
+    backendLink: 'https://github.com/MaiineV/warehouse-backend',
     gddLink: '',
     categories: ['FullStack'],
     technologies: ['.NET 8', 'C#', 'EF Core', 'PostgreSQL', 'React 19', 'TypeScript', 'SignalR', 'xUnit'],
