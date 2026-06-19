@@ -7,6 +7,7 @@ import arcaneImage from '../images/claude-arcane.svg';
 import mvgImage from '../images/mvg.webp';
 import todoImage from '../images/todo-app.webp';
 import warehouseImage from '../images/warehouse.svg';
+import vabImage from '../images/vab.webp';
 
 export const projects = [
   {
@@ -63,6 +64,20 @@ export const projects = [
     gddLink: '',
     categories: ['FullStack'],
     technologies: ['Python', 'Flask', 'SQLAlchemy', 'Flask-Login', 'SQLite', 'pytest', 'Tailwind'],
+    status: 'Live',
+    featured: true,
+  },
+  {
+    id: 10,
+    title: 'Creator Portfolio + CMS',
+    description:
+      'Custom portfolio site built for a content creator (Community Manager and Video Editor) with a headless CMS so the client edits her own content. React + TypeScript + Vite frontend with Tailwind, content modeled and served from Sanity (Studio + GROQ), plus migration tooling. Deployed on Vercel.',
+    image: vabImage,
+    viewLink: 'https://portfolio-vab.vercel.app/',
+    codeLink: 'https://github.com/MaiineV/PortfolioVAB',
+    gddLink: '',
+    categories: ['FullStack'],
+    technologies: ['React', 'TypeScript', 'Vite', 'Sanity CMS', 'GROQ', 'Tailwind'],
     status: 'Live',
     featured: true,
   },
