@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Warehouse Management System">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0e1b2a"/>
+      <stop offset="1" stop-color="#0a1018"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="46%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#glow)"/>
+  <line x1="262" y1="254" x2="538" y2="254" stroke="#1e3a52" stroke-width="2"/>
+  <g fill="url(#bar)">
+    <rect x="262" y="184" width="40" height="70"  rx="6"/>
+    <rect x="320" y="134" width="40" height="120" rx="6"/>
+    <rect x="378" y="159" width="40" height="95"  rx="6"/>
+    <rect x="436" y="104" width="40" height="150" rx="6"/>
+    <rect x="494" y="144" width="40" height="110" rx="6"/>
+  </g>
+  <text x="400" y="334" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="35" font-weight="700" fill="#e7eef6">Warehouse Management System</text>
+  <text x="400" y="370" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17.5" fill="#7da2bf">.NET 8 API · React 19 · TypeScript · Real-time (SignalR)</text>
+</svg>

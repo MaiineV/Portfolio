@@ -6,8 +6,23 @@ import oneStepImage from '../images/OneStepImage.webp';
 import arcaneImage from '../images/claude-arcane.svg';
 import mvgImage from '../images/mvg.webp';
 import todoImage from '../images/todo-app.webp';
+import warehouseImage from '../images/warehouse.svg';
 
 export const projects = [
+  {
+    id: 9,
+    title: 'Warehouse Management System',
+    description:
+      'Production full-stack warehouse and inventory system. .NET 8 (C#) REST API with EF Core (PostgreSQL), JWT auth, real-time updates via SignalR, FluentValidation, API versioning and PDF/Excel export; React 19 + TypeScript frontend with Tailwind, React Hook Form + Zod, TanStack Table and Recharts dashboards. Tested with xUnit and Vitest, monitored with Sentry, deployed on Fly.io and Vercel.',
+    image: warehouseImage,
+    viewLink: '',
+    codeLink: 'https://github.com/MaiineV/warehouse-frontend',
+    gddLink: '',
+    categories: ['FullStack'],
+    technologies: ['.NET 8', 'C#', 'EF Core', 'PostgreSQL', 'React 19', 'TypeScript', 'SignalR', 'xUnit'],
+    status: 'Live',
+    featured: true,
+  },
   {
     id: 6,
     title: 'claude-code-arcane',
