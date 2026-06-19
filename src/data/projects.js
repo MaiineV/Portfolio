@@ -4,6 +4,8 @@ import waxyImage from '../images/MiniaturaWaxy.webp';
 import retrucoImage from '../images/RetrucoImage.webp';
 import oneStepImage from '../images/OneStepImage.webp';
 import arcaneImage from '../images/claude-arcane.svg';
+import mvgImage from '../images/mvg.webp';
+import todoImage from '../images/todo-app.webp';
 
 export const projects = [
   {
@@ -18,6 +20,34 @@ export const projects = [
     categories: ['FullStack', 'AI'],
     technologies: ['Claude Code', 'SDD', 'Automation', 'Agents'],
     status: 'In Development',
+    featured: true,
+  },
+  {
+    id: 7,
+    title: 'MVG · Software Studio',
+    description:
+      'Studio site for MVG (software and game studio in Buenos Aires): a responsive React + Vite single-page app with multi-section content, bilingual EN/ES, and an EmailJS contact form. Shipped on Netlify.',
+    image: mvgImage,
+    viewLink: 'https://mvg-games.netlify.app/',
+    codeLink: 'https://github.com/MaiineV/MVG-Page',
+    gddLink: '',
+    categories: ['FullStack'],
+    technologies: ['React', 'Vite', 'React Router', 'EmailJS', 'Netlify'],
+    status: 'Live',
+    featured: true,
+  },
+  {
+    id: 8,
+    title: 'Task Board · TODO App',
+    description:
+      'Full-stack TODO app built with Flask: user auth via Flask-Login (bcrypt, CSRF), SQLAlchemy models with migrations, a Tailwind UI, and a pytest test suite. Per-user task isolation; deployed on PythonAnywhere.',
+    image: todoImage,
+    viewLink: 'https://maiine.pythonanywhere.com/auth/login',
+    codeLink: 'https://github.com/MaiineV/To-Do-App',
+    gddLink: '',
+    categories: ['FullStack'],
+    technologies: ['Python', 'Flask', 'SQLAlchemy', 'Flask-Login', 'SQLite', 'pytest', 'Tailwind'],
+    status: 'Live',
     featured: true,
   },
   {
