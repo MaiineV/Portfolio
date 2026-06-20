@@ -69,6 +69,17 @@ function ProjectCard({ project }) {
               View
             </a>
           )}
+          {project.apiDocsLink && (
+            <a
+              href={project.apiDocsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={classes.actionGhost}
+            >
+              <Icon name="FileText" size={14} />
+              API docs
+            </a>
+          )}
           {project.gddLink && (
             <a
               href={project.gddLink}

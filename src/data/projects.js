@@ -14,9 +14,10 @@ export const projects = [
     id: 9,
     title: 'Warehouse Management System',
     description:
-      'Production full-stack warehouse and inventory system. .NET 8 (C#) REST API with EF Core (PostgreSQL), JWT auth, real-time updates via SignalR, FluentValidation, API versioning and PDF/Excel export; React 19 + TypeScript frontend with Tailwind, React Hook Form + Zod, TanStack Table and Recharts dashboards. Tested with xUnit and Vitest, monitored with Sentry, deployed on Fly.io and Vercel.',
+      'Production full-stack warehouse and inventory system. .NET 8 (C#) REST API with EF Core (PostgreSQL), JWT auth, real-time updates via SignalR, FluentValidation, API versioning and PDF/Excel export; React 19 + TypeScript frontend with Tailwind, React Hook Form + Zod, TanStack Table and Recharts dashboards. Tested with xUnit and Vitest, monitored with Sentry, deployed on Render (API) and Vercel (web). Demo login: admin / Admin123!',
     image: warehouseImage,
-    viewLink: '',
+    viewLink: 'https://warehouse-frontend-dun.vercel.app',
+    apiDocsLink: 'https://warehouse-backend-dao0.onrender.com/swagger',
     codeLink: 'https://github.com/MaiineV/warehouse-frontend',
     backendLink: 'https://github.com/MaiineV/warehouse-backend',
     gddLink: '',
