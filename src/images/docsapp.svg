@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="DocsApp - Real-time collaborative docs">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1f1a"/>
+      <stop offset="1" stop-color="#0a1210"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="46%">
+      <stop offset="0" stop-color="#3ecf8e" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#3ecf8e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#glow)"/>
+  <!-- document page -->
+  <rect x="300" y="78" width="200" height="180" rx="12" fill="#10241d" stroke="#1e4436" stroke-width="2"/>
+  <rect x="322" y="104" width="110" height="12" rx="6" fill="#3ecf8e"/>
+  <rect x="322" y="132" width="156" height="8" rx="4" fill="#2a5c48"/>
+  <rect x="322" y="152" width="156" height="8" rx="4" fill="#2a5c48"/>
+  <rect x="322" y="172" width="122" height="8" rx="4" fill="#2a5c48"/>
+  <rect x="322" y="204" width="140" height="8" rx="4" fill="#2a5c48"/>
+  <rect x="322" y="224" width="96" height="8" rx="4" fill="#2a5c48"/>
+  <!-- collaborator cursors -->
+  <g>
+    <line x1="448" y1="166" x2="448" y2="184" stroke="#22d3ee" stroke-width="2.5"/>
+    <rect x="448" y="156" width="34" height="14" rx="4" fill="#22d3ee"/>
+  </g>
+  <g>
+    <line x1="422" y1="218" x2="422" y2="236" stroke="#f472b6" stroke-width="2.5"/>
+    <rect x="422" y="208" width="34" height="14" rx="4" fill="#f472b6"/>
+  </g>
+  <text x="400" y="334" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="35" font-weight="700" fill="#e7f6ee">DocsApp</text>
+  <text x="400" y="370" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17.5" fill="#7dbfa4">Next.js 16 · Supabase · Yjs CRDT · Real-time collaboration</text>
+</svg>

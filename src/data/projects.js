@@ -8,8 +8,23 @@ import mvgImage from '../images/mvg.webp';
 import todoImage from '../images/todo-app.webp';
 import warehouseImage from '../images/warehouse.svg';
 import vabImage from '../images/vab.webp';
+import docsappImage from '../images/docsapp.svg';
 
 export const projects = [
+  {
+    id: 11,
+    title: 'DocsApp · Real-time Collaborative Docs',
+    description:
+      'Notion-style collaborative docs app for small teams. Next.js 16 (App Router, Server Actions) + React 19 + TypeScript strict, on Supabase (Postgres, Auth, RLS, Realtime). Real-time co-editing with live cursors via a hand-built Yjs (CRDT) provider over Supabase Realtime - no third-party realtime vendor. Multi-tenant security enforced by Row-Level Security, token-based team invitations with roles, full-text search, trash with cascade, public share links, and a versioned REST API (Bearer auth, Markdown in/out, live-broadcast edits). Tested with Vitest and Playwright; deployed on Vercel.',
+    image: docsappImage,
+    viewLink: 'https://docs-app-orcin.vercel.app',
+    codeLink: 'https://github.com/MaiineV/DocsApp',
+    gddLink: '',
+    categories: ['FullStack'],
+    technologies: ['Next.js 16', 'React 19', 'TypeScript', 'Supabase', 'PostgreSQL', 'Yjs (CRDT)', 'Tailwind v4', 'Playwright'],
+    status: 'Live',
+    featured: true,
+  },
   {
     id: 9,
     title: 'Warehouse Management System',
