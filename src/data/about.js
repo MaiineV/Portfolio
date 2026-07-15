@@ -40,7 +40,7 @@ export const achievements = [
   },
   {
     title: 'GamesCom Latam 2025 & 2026',
-    description: 'Pitched Sawi, The Void Buster at GamesCom Latam 2025. Returning in 2026.',
+    description: 'Pitched Sawi, The Void Buster and Waxy at GamesCom Latam 2025, and Project Toymaker at GamesCom Latam 2026.',
   },
 ];
 

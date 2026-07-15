@@ -121,10 +121,10 @@ function ProjectCard({ project }) {
 
 export default function Portfolio() {
   useDocumentTitle('Projects');
-  const [category, setCategory] = useState('All');
+  const [category, setCategory] = useState(projectCategories[0]);
 
   const filtered = useMemo(
-    () => (category === 'All' ? projects : projects.filter((p) => p.categories.includes(category))),
+    () => projects.filter((p) => p.categories.includes(category)),
     [category],
   );
 

@@ -1,4 +1,5 @@
 import robotpaloozaImage from '../images/robotpalooza_image.webp';
+import toymakerImage from '../images/toymaker.webp';
 import sawiImage from '../images/banner.webp';
 import waxyImage from '../images/MiniaturaWaxy.webp';
 import retrucoImage from '../images/RetrucoImage.webp';
@@ -98,6 +99,20 @@ export const projects = [
     featured: true,
   },
   {
+    id: 12,
+    title: 'Project Toymaker',
+    description:
+      'State-funded multiplayer game built in Unity (C#) at INVI, where I am the lead programmer. I own the gameplay systems, UI systems, and the in-editor tooling the rest of the team builds on, and I implement the real-time multiplayer networking with FishNet. Pitched at GamesCom Latam 2026.',
+    image: toymakerImage,
+    viewLink: 'https://www.youtube.com/watch?v=aO-Avejjl2I',
+    codeLink: '',
+    gddLink: '',
+    categories: ['Game Development'],
+    technologies: ['Unity', 'C#', 'FishNet', 'Multiplayer', 'In-Editor Tooling'],
+    status: 'In Development',
+    featured: true,
+  },
+  {
     id: 2,
     title: 'Sawi, The Void Buster',
     description:
@@ -172,4 +187,4 @@ export const projects = [
   },
 ];
 
-export const projectCategories = ['All', 'FullStack', 'AI', 'Game Development', 'Game Design'];
+export const projectCategories = ['FullStack', 'AI', 'Game Development', 'Game Design'];
