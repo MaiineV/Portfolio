@@ -1,5 +1,7 @@
 import robotpaloozaImage from '../images/robotpalooza_image.webp';
 import toymakerImage from '../images/toymaker.webp';
+import rollgeonImage from '../images/rollgeon.webp';
+import redButtonImage from '../images/red-button.webp';
 import sawiImage from '../images/banner.webp';
 import waxyImage from '../images/MiniaturaWaxy.webp';
 import retrucoImage from '../images/RetrucoImage.webp';
@@ -102,14 +104,43 @@ export const projects = [
     id: 12,
     title: 'Project Toymaker',
     description:
-      'State-funded multiplayer game built in Unity (C#) at INVI, where I am the lead programmer. I own the gameplay systems, UI systems, and the in-editor tooling the rest of the team builds on, and I implement the real-time multiplayer networking with FishNet. Pitched at GamesCom Latam 2026.',
+      'State-funded multiplayer game built in Unity (C#) at INVI, where I work as both game designer and lead programmer. On the design side I design the gameplay systems, balance the economy and progression, work on level and content design, and write the GDD. On the technical side I own the gameplay and UI systems, the in-editor tooling the rest of the team builds on, and the real-time multiplayer networking with FishNet. Pitched at GamesCom Latam 2026.',
     image: toymakerImage,
     viewLink: 'https://www.youtube.com/watch?v=aO-Avejjl2I',
     codeLink: '',
     gddLink: '',
-    categories: ['Game Development'],
-    technologies: ['Unity', 'C#', 'FishNet', 'Multiplayer', 'In-Editor Tooling'],
+    categories: ['Game Design', 'Game Development'],
+    technologies: ['Systems Design', 'Balancing', 'Level Design', 'Unity', 'C#', 'FishNet', 'Multiplayer'],
     status: 'In Development',
+    featured: true,
+  },
+  {
+    id: 13,
+    title: 'Rollgeon',
+    description:
+      'Roguelike dice-builder by 3AM Games where your deck is a bag of dice and combat is built on Generala, the classic Rio de la Plata dice game. I designed the combat system and its dice combinations, balanced the economy (dice, enchantments, shops, enemies and run progression), designed content, and programmed it in Unity. Playable in the browser.',
+    image: rollgeonImage,
+    viewLink: 'https://3amgamesstudio.itch.io/rollgeon',
+    codeLink: '',
+    gddLink:
+      'https://docs-app-orcin.vercel.app/share/kSQ8E_PsNG9ffnEZn4aP5TkXb7A7ACl2KMpAS79VoVM',
+    categories: ['Game Design', 'Game Development'],
+    technologies: ['Systems Design', 'Combat Design', 'Balancing', 'Roguelike', 'Unity', 'C#'],
+    status: 'In Development',
+    featured: true,
+  },
+  {
+    id: 14,
+    title: 'You CAnT Always Push the Red Button',
+    description:
+      'Decision-making game made for Unity BA Game Jam 2026: you are the president of the Cat Nation, keeping the country stable by choosing action plans, or giving in to your feline instincts and pushing the shiny red button. I came up with the concept and core loop, designed and balanced the systems behind each decision, wrote the events and outcomes, and programmed it in Unity.',
+    image: redButtonImage,
+    viewLink: 'https://zathmell.itch.io/you-cant-always-push-the-red-button',
+    codeLink: '',
+    gddLink: '',
+    categories: ['Game Design', 'Game Development'],
+    technologies: ['Core Loop Design', 'Systems Design', 'Narrative Design', 'Game Jam', 'Unity', 'C#'],
+    status: 'Released',
     featured: true,
   },
   {

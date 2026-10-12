@@ -31,9 +31,11 @@ function Overview() {
       <section>
         <h3 className={classes.h3}>My mission</h3>
         <p>
-          To build software that people actually enjoy using, owning features end to end from the
-          UI to the API and the database, while sharing knowledge with the next generation of
-          developers. I care about clean architecture, performance, and shipping.
+          To make games and software that people actually enjoy using. In games that means
+          designing systems and loops worth coming back to; on the web it means owning features
+          end to end from the UI to the API and the database. Along the way I share what I learn
+          with the next generation of developers. I care about clear design, clean architecture,
+          and shipping.
         </p>
       </section>
 
@@ -167,10 +169,11 @@ export default function AboutMe() {
           <p className={classes.greeting}>Hello, I'm</p>
           <h2 className={classes.name}>Ignacio Martinez</h2>
           <p className={classes.bio}>
-            Full-Stack Developer building web applications end to end with React, TypeScript,
-            Node.js and C#/.NET. Strong CS fundamentals from teaching at two universities, plus a
-            real-time and game dev background (Unity, Unreal) as a differentiator. Open to
-            full-stack and frontend roles.
+            Game Designer and Full-Stack Developer. I design gameplay systems, balance economies
+            and write GDDs, and I can prototype and ship those designs myself in Unity and Unreal.
+            On the web side I build applications end to end with React, TypeScript, Node.js and
+            C#/.NET. I also teach game design and programming at two universities. Open to game
+            design and full-stack roles.
           </p>
           <StatGrid items={heroStats} />
         </div>

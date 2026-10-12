@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import classes from '../styles/Portfolio.module.scss';
 import PageShell from '../components/layout/PageShell';
 import PageHeader from '../components/ui/PageHeader';
@@ -121,7 +122,10 @@ function ProjectCard({ project }) {
 
 export default function Portfolio() {
   useDocumentTitle('Projects');
-  const [category, setCategory] = useState(projectCategories[0]);
+  const requested = useLocation().state?.category;
+  const [category, setCategory] = useState(
+    projectCategories.includes(requested) ? requested : projectCategories[0],
+  );
 
   const filtered = useMemo(
     () => projects.filter((p) => p.categories.includes(category)),

@@ -57,6 +57,14 @@
   @media (max-width: t.$bp-md) { font-size: t.$fs-3xl; }
 }
 
+// Profile switch reuses FilterChips; undo its centered, bottom-spaced layout.
+.modes > div {
+  justify-content: flex-start;
+  margin: t.$space-1 0;
+
+  @media (max-width: t.$bp-md) { justify-content: center; }
+}
+
 .role {
   font-size: t.$fs-xl;
   color: t.$text-primary;

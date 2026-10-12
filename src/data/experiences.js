@@ -21,7 +21,7 @@ export const experiences = [
   },
   {
     id: 2,
-    title: 'Lead Programmer',
+    title: 'Lead Programmer & Game Designer',
     company: 'INVI · Project Toymaker',
     period: 'September 2025 – Present',
     duration: '10 Months',
@@ -29,14 +29,16 @@ export const experiences = [
     status: 'Current',
     location: 'Remote (Argentina)',
     description:
-      'Lead programmer for Project Toymaker, a state-funded indie videogame. Designing multiplayer networking and backend systems.',
+      'Game designer and lead programmer for Project Toymaker, a state-funded indie videogame. Designing the gameplay systems and building the multiplayer networking and backend behind them.',
     responsibilities: [
+      'Gameplay systems design, economy and progression balancing',
+      'Level and content design; GDD authoring and upkeep',
       'Multiplayer networking with FishNet',
       'Backend systems architecture',
       'In-editor tooling for the development team',
       'Technical direction and producer coordination',
     ],
-    technologies: ['Unity', 'C#', 'FishNet', 'GitHub'],
+    technologies: ['Unity', 'C#', 'FishNet', 'Game Design', 'GitHub'],
     icon: 'Gamepad2',
   },
   {

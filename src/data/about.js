@@ -23,6 +23,10 @@ export const certifications = [
 
 export const achievements = [
   {
+    title: 'Game Design Across Three Titles',
+    description: 'Designed systems, balance and content for Project Toymaker, Rollgeon and You CAnT Always Push the Red Button (Unity BA Game Jam 2026).',
+  },
+  {
     title: 'Full-Stack Delivery',
     description: 'Shipped web apps end to end with React, TypeScript, Node.js and C#/.NET across business, healthcare and real-time products.',
   },
@@ -45,6 +49,7 @@ export const achievements = [
 ];
 
 export const personalFacts = [
+  { category: 'Game Design', fact: 'Design systems, balance and content, and write the GDDs behind them.' },
   { category: 'Coding Journey', fact: 'Started programming at age 16 with Python.' },
   { category: 'Full-Stack Builder', fact: 'Build features end to end, from the React UI to the API and the database.' },
   { category: 'AI & Automation', fact: 'Use AI tooling and spec-driven development to automate work and ship faster.' },
@@ -54,12 +59,12 @@ export const personalFacts = [
 ];
 
 export const interests = [
+  'Game Design',
   'Web Development',
   'Software Architecture',
   'AI Development',
   'Developer Tooling',
   'UI/UX Design',
-  'Game Design',
   'Teaching & Mentoring',
   'Music Production',
 ];

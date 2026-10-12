@@ -54,6 +54,20 @@ export const skillsData = [
     ],
   },
   {
+    category: 'Game Design',
+    icon: 'Dices',
+    description: 'Designing systems, loops, and content players want to come back to',
+    skills: [
+      { name: 'Systems Design',          level: 85, description: 'Mechanics, combat, and interlocking gameplay systems' },
+      { name: 'Core Loop Design',        level: 85, description: 'Defining the moment-to-moment and session loops' },
+      { name: 'GDD & Documentation',     level: 85, description: 'GDDs, feature specs, and one-pagers' },
+      { name: 'Rapid Prototyping',       level: 85, description: 'Testing ideas fast in Unity and Godot, including game jams' },
+      { name: 'Balancing & Economy',     level: 80, description: 'Tuning values, progression, and in-game economies' },
+      { name: 'Level & Content Design',  level: 80, description: 'Levels, encounters, items, and enemies' },
+      { name: 'Playtesting & Iteration', level: 80, description: 'Running playtests and iterating on feedback' },
+    ],
+  },
+  {
     category: 'Game Development',
     icon: 'Gamepad2',
     description: 'Creating immersive gaming experiences',
